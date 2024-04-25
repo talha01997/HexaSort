@@ -104,8 +104,10 @@ public class PickableStack : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 100, cellLayer))
         {
+            print(hit.collider.name);
             if (hit.collider.transform.parent.parent.TryGetComponent(out CellController cell))
             {
+                print(hit.collider.name);
                 if (cell.isOccupied) return null;
                 return cell;
             }
