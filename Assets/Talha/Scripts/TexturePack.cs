@@ -9,6 +9,7 @@ public class TexturePack : ScriptableObject
     {
         public TextureInfo.TextureEnum SelectedTextureEnum = TextureInfo.TextureEnum.None;
         public Texture texture;
+        public Material colorMat;
     }
     public List<TexturePackInfo> HexagonTextureInfo = new List<TexturePackInfo>();
     public int GetTextureEnumIndex(TextureInfo.TextureEnum ControlTextureEnum)

@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a49ab35b69e84a2e995cd9bf5b1d1e4, type: 3}
   m_Name: TexturePackNew
   m_EditorClassIdentifier: 
-  HexagonTextureInfo: []
+  HexagonTextureInfo:
+  - SelectedTextureEnum: 1
+    texture: {fileID: 0}
+    colorMat: {fileID: 0}
+  - SelectedTextureEnum: 2
+    texture: {fileID: 0}
+    colorMat: {fileID: 0}
+  - SelectedTextureEnum: 3
+    texture: {fileID: 0}
+    colorMat: {fileID: 0}

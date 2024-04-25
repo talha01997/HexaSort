@@ -19,7 +19,7 @@ public class CellController : MonoBehaviour
 
     [Header("Hexagons Related")]
     [SerializeField] List<HexagonController> hexagons = new List<HexagonController>();
-    public List<ColorInfo.ColorEnum> contentInfo;
+    public List<TextureInfo.TextureEnum> contentInfo;
     public void Starter()
     {
         SetHexagonLists();
@@ -36,12 +36,12 @@ public class CellController : MonoBehaviour
             {
                 //Create Blast Hex List
                 List<HexagonController> selectedHexList = new List<HexagonController>();
-                ColorInfo.ColorEnum topHexColor = hexagons[hexagons.Count - 1].GetColor();
+                TextureInfo.TextureEnum topHexColor = hexagons[hexagons.Count - 1].GetTexture();
                 selectedHexList.Add(hexagons[hexagons.Count - 1]);
 
                 for (int i = hexagons.Count - 2; i >= 0; i--)
                 {
-                    if (hexagons[i].GetColor() == topHexColor)
+                    if (hexagons[i].GetTexture() == topHexColor)
                     {
                         selectedHexList.Add(hexagons[i]);
                     }
@@ -73,7 +73,7 @@ public class CellController : MonoBehaviour
             //If No Blast
             else
             {
-                ColorInfo.ColorEnum TopRopeColor = hexagons[hexagons.Count - 1].GetColor();
+                TextureInfo.TextureEnum TopRopeColor = hexagons[hexagons.Count - 1].GetTexture();
                 GridManager.TransferType SendOrTake = GridManager.TransferType.Take;
                 List<Vector2> NeighboursCoordinateList = GridManager.instance.GetNeighboursCoordinates(GetCoordinates());
                 List<Vector2> SelectedNeighbours = new List<Vector2>();
@@ -91,7 +91,7 @@ public class CellController : MonoBehaviour
                     if (ControlNeighbourGrid.isOpen && ControlNeighbourGrid.CellContentList.Count > 0)
                     {
                         //If Hexagon Colors Matched
-                        if (TopRopeColor == ControlNeighbourGridPart.hexagons[ControlNeighbourGridPart.hexagons.Count - 1].GetColor())
+                        if (TopRopeColor == ControlNeighbourGridPart.hexagons[ControlNeighbourGridPart.hexagons.Count - 1].GetTexture())
                         {
                             SelectedNeighbours.Add(new Vector2(NeighbourPosX, NeighbourPosY));
                         }
@@ -156,7 +156,7 @@ public class CellController : MonoBehaviour
                         List<HexagonController> WillTakeRopeList = new List<HexagonController>();
                         for (int i = SelectedGridPart.hexagons.Count - 1; i >= 0; i--)
                         {
-                            if (SelectedGridPart.hexagons[i].GetColor() == TopRopeColor)
+                            if (SelectedGridPart.hexagons[i].GetTexture() == TopRopeColor)
                             {
                                 WillTakeRopeList.Add(SelectedGridPart.hexagons[i]);
                             }
@@ -195,7 +195,7 @@ public class CellController : MonoBehaviour
                         List<HexagonController> WillSendRopeList = new List<HexagonController>();
                         for (int i = hexagons.Count - 1; i >= 0; i--)
                         {
-                            if (hexagons[i].GetColor() == TopRopeColor)
+                            if (hexagons[i].GetTexture() == TopRopeColor)
                             {
                                 WillSendRopeList.Add(hexagons[i]);
                             }
@@ -286,10 +286,10 @@ public class CellController : MonoBehaviour
     }
     bool IsPure()
     {
-        ColorInfo.ColorEnum TopRopeColor = hexagons[hexagons.Count - 1].GetColor();
+        TextureInfo.TextureEnum TopRopeColor = hexagons[hexagons.Count - 1].GetTexture();
         for (int i = hexagons.Count - 1; i >= 0; i--)
         {
-            if (hexagons[i].GetColor() != TopRopeColor)
+            if (hexagons[i].GetTexture() != TopRopeColor)
             {
                 return false;
             }
@@ -312,7 +312,7 @@ public class CellController : MonoBehaviour
         {
             hexagons.Add(hexes[i]);
             hexes[i].transform.SetParent(HexStackParent);
-            GridManager.instance.GridPlan[(int)_coordinates.x, (int)_coordinates.y].CellContentList.Add(hexes[i].GetColor());
+            GridManager.instance.GridPlan[(int)_coordinates.x, (int)_coordinates.y].CellContentList.Add(hexes[i].GetTexture());
         }
     }
     public void ToggleCellObject(out bool _isOpen)

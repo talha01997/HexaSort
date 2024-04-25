@@ -4,7 +4,7 @@ using UnityEngine;
 [CustomEditor(typeof(GridManager))]
 public class GridManagerEditor : Editor
 {
-    private ColorInfo.ColorEnum colorEnum;
+    private TextureInfo.TextureEnum colorEnum;
     private bool addingHexagons;
 
     public override void OnInspectorGUI()
@@ -22,29 +22,29 @@ public class GridManagerEditor : Editor
         GUI.backgroundColor = Color.red;
         if (GUILayout.Button("RED", GUILayout.ExpandWidth(true)))
         {
-            colorEnum = ColorInfo.ColorEnum.RED;
+            colorEnum = TextureInfo.TextureEnum.Chip1;
             addingHexagons = true;
         }
         GUI.backgroundColor = Color.blue;
         if (GUILayout.Button("BLUE", GUILayout.ExpandWidth(true)))
         {
-            colorEnum = ColorInfo.ColorEnum.BLUE;
+            colorEnum = TextureInfo.TextureEnum.Chip2;
             addingHexagons = true;
         }
         GUI.backgroundColor = Color.yellow;
         if (GUILayout.Button("YELLOW", GUILayout.ExpandWidth(true)))
         {
-            colorEnum = ColorInfo.ColorEnum.YELLOW;
+            colorEnum = TextureInfo.TextureEnum.Chip3;
             addingHexagons = true;
         }
-        GUI.backgroundColor = Color.white; // Renkleri sýfýrla
+        GUI.backgroundColor = Color.white; // Renkleri sï¿½fï¿½rla
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
         GUI.backgroundColor = Color.white;
         if (GUILayout.Button("BLOCK ADDING HEX", GUILayout.ExpandWidth(true)))
         {
-            colorEnum = ColorInfo.ColorEnum.None;
+            colorEnum = TextureInfo.TextureEnum.None;
             addingHexagons = false;
         }
         GUILayout.EndHorizontal();
@@ -76,7 +76,7 @@ public class GridManagerEditor : Editor
     {
         if (Application.isPlaying) return;
 
-        if (!addingHexagons) // eðer bir renk buttonuna basýlmadýysa sadece cell aktifliði kontrol edilmeli
+        if (!addingHexagons) // eï¿½er bir renk buttonuna basï¿½lmadï¿½ysa sadece cell aktifliï¿½i kontrol edilmeli
         {
             bool isOpen = true;
             cellController.ToggleCellObject(out isOpen);
@@ -84,11 +84,11 @@ public class GridManagerEditor : Editor
         }
         else
         {
-            if (colorEnum != ColorInfo.ColorEnum.None)
+            if (colorEnum != TextureInfo.TextureEnum.None)
             {
                 cellController.contentInfo.Add(colorEnum);
                 int index = cellController.contentInfo.Count - 1;
-                Material mat = gridManager.colorPack.HexagonColorInfo[gridManager.colorPack.GetColorEnumIndex(colorEnum)].colorMat;
+                Material mat = gridManager.texturePack.HexagonTextureInfo[gridManager.texturePack.GetTextureEnumIndex(colorEnum)].colorMat;
 
                 gridManager.SpawnHexagon(
                     index,

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -82,28 +83,29 @@ public class StackSpawner : MonoSingleton<StackSpawner>
 
             for (int i = 0; i < randomHexCount; i++)
             {
-                ColorInfo.ColorEnum color = GetRandomColor();
+                TextureInfo.TextureEnum texture = GetRandomTexture();
+                //Material mat = new Material(GridManager.instance.BlockMaterial);
                 Material mat = new Material(GridManager.instance.BlockMaterial);
-                mat.color = GridManager.instance.colorPack.HexagonColorInfo[GridManager.instance.colorPack.GetColorEnumIndex(color)].HexColor;
-
+                //mat.color = GridManager.instance.texturePack.HexagonTextureInfo[GridManager.instance.texturePack.GetTextureEnumIndex(color)].HexColor;
+                mat.SetTexture("_MainTex", GridManager.instance.texturePack.HexagonTextureInfo[GridManager.instance.texturePack.GetTextureEnumIndex(texture)].texture);
                 HexagonController hex = Instantiate(hexagonPrefab, Vector3.zero, Quaternion.identity, stacks[s]);
 
                 float verticalPos = i * GridManager.instance.VERTICAL_PLACEMENT_OFFSET;
                 Vector3 spawnPos = new Vector3(0, verticalPos, 0);
                 hex.transform.localPosition = spawnPos;
-                hex.Initialize(color, mat);
+                hex.Initialize(texture, mat);
             }
         }
     }
 
     #region GETTERS
 
-    ColorInfo.ColorEnum GetRandomColor()
+    TextureInfo.TextureEnum GetRandomTexture()
     {
 
         int randomIndex = Random.Range(1, maxColorVarierty + 1);
 
-        return (ColorInfo.ColorEnum)randomIndex;
+        return (TextureInfo.TextureEnum)randomIndex;
     }
     int GetRandomAmount(int min, int max)
     {

@@ -6,6 +6,6 @@ public class CellData : MonoBehaviour
     public int PosX;
     public int PosY;
     public bool isOpen;
-    public List<ColorInfo.ColorEnum> CellContentList = new();
+    public List<TextureInfo.TextureEnum> CellContentList = new();
     public GameObject CellObject;
 }

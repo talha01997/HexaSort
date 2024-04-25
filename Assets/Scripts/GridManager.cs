@@ -11,7 +11,7 @@ public class GridManager : MonoSingleton<GridManager>
     [SerializeField] GameObject CellPrefab;
     [SerializeField] HexagonController hexagonBlockPrefab;
     public Material BlockMaterial;
-    public ColorPack colorPack;
+    public TexturePack texturePack;
     public LayerMask CellLayer;
 
     [Header("Configuration")]
@@ -61,7 +61,7 @@ public class GridManager : MonoSingleton<GridManager>
                 if (ContainsInStartInfo(x, y, out index))
                 {
                     GridPlan[x, y].isOpen = startInfos[index].isOpen;
-                    List<ColorInfo.ColorEnum> CE = new List<ColorInfo.ColorEnum>();
+                    List<TextureInfo.TextureEnum> CE = new List<TextureInfo.TextureEnum>();
                     for (int i = 0; i < startInfos[index].ContentInfo.Count; i++)
                     {
                         CE.Add(startInfos[index].ContentInfo[i]);
@@ -94,16 +94,16 @@ public class GridManager : MonoSingleton<GridManager>
                     CellController cellParent = GridPlan[x, y].CellObject.GetComponent<CellController>();
                     for (int i = 0; i < GridPlan[x, y].CellContentList.Count; i++)
                     {
-                        ColorInfo.ColorEnum color = GridPlan[x, y].CellContentList[i];
+                        TextureInfo.TextureEnum texture = GridPlan[x, y].CellContentList[i];
                         Material mat = new Material(BlockMaterial);
-                        mat.color = colorPack.HexagonColorInfo[colorPack.GetColorEnumIndex(color)].HexColor;
-
+                        //mat.color = texturePack.HexagonTextureInfo[texturePack.GetTextureEnumIndex(texture)].HexColor;
+                        mat.SetTexture("_MainTex", texturePack.HexagonTextureInfo[texturePack.GetTextureEnumIndex(texture)].texture);
 
                         SpawnHexagon(i,
                            cellParent.transform.position,
                            cellParent.HexStackParent,
                             mat,
-                            color);
+                            texture);
                     }
 
                     cellParent.SetOccupied(true);
@@ -123,14 +123,14 @@ public class GridManager : MonoSingleton<GridManager>
             }
         }
     }
-    public void SpawnHexagon(int index, Vector3 gridPos, Transform parent, Material mat, ColorInfo.ColorEnum color)
+    public void SpawnHexagon(int index, Vector3 gridPos, Transform parent, Material mat, TextureInfo.TextureEnum texture)
     {
         float verticalPos = (index + 1) * VERTICAL_PLACEMENT_OFFSET;
         Vector3 spawnPos = gridPos + new Vector3(0, verticalPos, 0);
 
         HexagonController cloneBlock = Instantiate(hexagonBlockPrefab, spawnPos, Quaternion.identity, parent);
 
-        cloneBlock.Initialize(color, mat);
+        cloneBlock.Initialize(texture, mat);
     }
 
     bool ContainsInStartInfo(int x, int y, out int index)
@@ -201,7 +201,7 @@ public class GridManager : MonoSingleton<GridManager>
     public class StartInfo
     {
         public Vector2Int Coordinates;
-        public List<ColorInfo.ColorEnum> ContentInfo;
+        public List<TextureInfo.TextureEnum> ContentInfo;
         public bool isOpen;
     }
 }
