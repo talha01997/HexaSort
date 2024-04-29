@@ -104,7 +104,6 @@ public class GridManager : MonoSingleton<GridManager>
                         Material mat = new(BlockMaterial);
                         
                         //mat.color = texturePack.HexagonTextureInfo[texturePack.GetTextureEnumIndex(texture)].HexColor;
-                        Debug.Log("in grid manager");
                         mat.SetTexture("_MainTex", texturePack.HexagonTextureInfo[texturePack.GetTextureEnumIndex(texture)].texture);
                         SpawnHexagon(i,
                            cellParent.transform.position,
