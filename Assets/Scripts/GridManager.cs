@@ -11,6 +11,7 @@ public class GridManager : MonoSingleton<GridManager>
     [SerializeField] GameObject CellPrefab;
     [SerializeField] HexagonController hexagonBlockPrefab;
     public Material BlockMaterial;
+    public Shader blockShader;
     public TexturePack texturePack;
     public LayerMask CellLayer;
 
@@ -45,14 +46,17 @@ public class GridManager : MonoSingleton<GridManager>
         if (GridPlan != null)
         {
             DestroyPreviousGrid();
+
         }
 
         GridPlan = new CellData[_gridSizeX, _gridSizeY];
+
         for (int x = 0; x < _gridSizeX; x++)
         {
             for (int y = 0; y < _gridSizeY; y++)
             {
                 GridPlan[x, y] = new CellData();
+                
 
                 int index;
                 GridPlan[x, y].PosX = x;
@@ -62,6 +66,7 @@ public class GridManager : MonoSingleton<GridManager>
                 {
                     GridPlan[x, y].isOpen = startInfos[index].isOpen;
                     List<TextureInfo.TextureEnum> CE = new List<TextureInfo.TextureEnum>();
+                    
                     for (int i = 0; i < startInfos[index].ContentInfo.Count; i++)
                     {
                         CE.Add(startInfos[index].ContentInfo[i]);
@@ -77,6 +82,7 @@ public class GridManager : MonoSingleton<GridManager>
                 if (GridPlan[x, y].isOpen)
                 {
                     GameObject cloneCellGO = Instantiate(CellPrefab, Vector3.zero, CellPrefab.transform.rotation, transform);
+                    
                     cloneCellGO.transform.position =
                         new Vector3(x * CELL_HORIZONTAL_OFFSET, 0,
                         -(((x % 2) * (CELL_VERTICAL_OFFSET / 2)) + y * CELL_VERTICAL_OFFSET));
@@ -95,10 +101,11 @@ public class GridManager : MonoSingleton<GridManager>
                     for (int i = 0; i < GridPlan[x, y].CellContentList.Count; i++)
                     {
                         TextureInfo.TextureEnum texture = GridPlan[x, y].CellContentList[i];
-                        Material mat = new Material(BlockMaterial);
+                        Material mat = new(BlockMaterial);
+                        
                         //mat.color = texturePack.HexagonTextureInfo[texturePack.GetTextureEnumIndex(texture)].HexColor;
+                        Debug.Log("in grid manager");
                         mat.SetTexture("_MainTex", texturePack.HexagonTextureInfo[texturePack.GetTextureEnumIndex(texture)].texture);
-
                         SpawnHexagon(i,
                            cellParent.transform.position,
                            cellParent.HexStackParent,
@@ -127,9 +134,7 @@ public class GridManager : MonoSingleton<GridManager>
     {
         float verticalPos = (index + 1) * VERTICAL_PLACEMENT_OFFSET;
         Vector3 spawnPos = gridPos + new Vector3(0, verticalPos, 0);
-        HexagonController cloneBlock = new HexagonController();
-        cloneBlock = Instantiate(hexagonBlockPrefab, spawnPos, Quaternion.identity, parent);
-
+        HexagonController cloneBlock = Instantiate(hexagonBlockPrefab, spawnPos, Quaternion.identity, parent);
         cloneBlock.Initialize(texture, mat);
     }
 
