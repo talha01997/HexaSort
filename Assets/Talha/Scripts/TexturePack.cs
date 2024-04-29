@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "TexturePackNew", menuName = "TexturePack/MyTexturePack", order = 1)]
-public class TexturePack : ScriptableObject
+public class TexturePack : MonoBehaviour
 {
     [System.Serializable]
     public class TexturePackInfo

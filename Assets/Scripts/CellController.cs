@@ -177,6 +177,9 @@ public class CellController : MonoBehaviour
                         for (int i = 0; i < WillTakeRopeList.Count; i++)
                         {
                             WillTakeRopeList[i].transform.SetParent(HexStackParent);
+                            //WillTakeRopeList[i].transform.DOLocalJump(new Vector3(0, hexagons.Count * GridManager.instance.VERTICAL_PLACEMENT_OFFSET, 0),1,1, 0.3f);
+
+                            WillTakeRopeList[i].transform.DOLocalRotate(new Vector3(180, 0, 0), .3f);
                             WillTakeRopeList[i].transform.DOLocalMove(new Vector3(0, hexagons.Count * GridManager.instance.VERTICAL_PLACEMENT_OFFSET, 0), 0.3f);
 
                             hexagons.Add(WillTakeRopeList[i]);
@@ -216,6 +219,10 @@ public class CellController : MonoBehaviour
                         for (int i = 0; i < WillSendRopeList.Count; i++)
                         {
                             WillSendRopeList[i].transform.SetParent(SelectedGridPart.HexStackParent);
+                            //WillSendRopeList[i].transform.DOLocalJump(new Vector3(0, SelectedGridPart.hexagons.Count * GridManager.instance.VERTICAL_PLACEMENT_OFFSET, 0),1,1, 0.3f);
+
+
+                            WillSendRopeList[i].transform.DOLocalRotate(new Vector3(180, 0, 0), .3f);
                             WillSendRopeList[i].transform.DOLocalMove(new Vector3(0, SelectedGridPart.hexagons.Count * GridManager.instance.VERTICAL_PLACEMENT_OFFSET, 0), 0.3f);
 
                             SelectedGridPart.hexagons.Add(WillSendRopeList[i]);

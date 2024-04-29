@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: TexturePackNew
   m_EditorClassIdentifier: 
   HexagonTextureInfo:
+  - SelectedTextureEnum: 0
+    texture: {fileID: 2800000, guid: 8c9eb9359f66d493c81409ec87c44a62, type: 3}
+    colorMat: {fileID: 0}
   - SelectedTextureEnum: 1
     texture: {fileID: 2800000, guid: b2ce1000637d04988afeeac5242b8214, type: 3}
     colorMat: {fileID: 0}
@@ -21,4 +24,10 @@ MonoBehaviour:
     colorMat: {fileID: 0}
   - SelectedTextureEnum: 3
     texture: {fileID: 2800000, guid: 549a45f82c66940b6b3a66668578ad40, type: 3}
+    colorMat: {fileID: 0}
+  - SelectedTextureEnum: 4
+    texture: {fileID: 2800000, guid: 0b14afb1612a345f1a38b43b678089b1, type: 3}
+    colorMat: {fileID: 0}
+  - SelectedTextureEnum: 5
+    texture: {fileID: 2800000, guid: 44ae95758656f43478c32f3019faac9a, type: 3}
     colorMat: {fileID: 0}

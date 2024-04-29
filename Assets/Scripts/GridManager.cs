@@ -9,7 +9,7 @@ public class GridManager : MonoSingleton<GridManager>
 
     [Header("References")]
     [SerializeField] GameObject CellPrefab;
-    [SerializeField] HexagonController hexagonBlockPrefab;
+    [SerializeField] HexagonController hexagonBlockPrefab, spawnedHexagon;
     public Material BlockMaterial;
     public TexturePack texturePack;
     public LayerMask CellLayer;
@@ -23,7 +23,7 @@ public class GridManager : MonoSingleton<GridManager>
     private const float CELL_HORIZONTAL_OFFSET = 0.75f;
     private const float CELL_VERTICAL_OFFSET = 0.8660254f;
     public float VERTICAL_PLACEMENT_OFFSET = 0.2f;
-    [SerializeField] List<StartInfo> startInfos;
+    [SerializeField] List<StartInfo> startInfos = new List<StartInfo>();
 
 
     [Space(125)]
@@ -127,10 +127,9 @@ public class GridManager : MonoSingleton<GridManager>
     {
         float verticalPos = (index + 1) * VERTICAL_PLACEMENT_OFFSET;
         Vector3 spawnPos = gridPos + new Vector3(0, verticalPos, 0);
+        spawnedHexagon = Instantiate(hexagonBlockPrefab, spawnPos, Quaternion.identity, parent);
 
-        HexagonController cloneBlock = Instantiate(hexagonBlockPrefab, spawnPos, Quaternion.identity, parent);
-
-        cloneBlock.Initialize(texture, mat);
+        spawnedHexagon.Initialize(texture, mat);
     }
 
     bool ContainsInStartInfo(int x, int y, out int index)

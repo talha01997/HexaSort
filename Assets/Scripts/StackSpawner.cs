@@ -8,7 +8,7 @@ public class StackSpawner : MonoSingleton<StackSpawner>
 {
     [Header("References")]
     [SerializeField] PickableStack stackPrefab;
-    [SerializeField] HexagonController hexagonPrefab;
+    [SerializeField] HexagonController hexagonPrefab, spawnedHexagon;
 
     [Header("References")]
     [SerializeField] List<int> scoreTresholds;
@@ -18,7 +18,7 @@ public class StackSpawner : MonoSingleton<StackSpawner>
     [SerializeField] int tresholdIndex;
     [Tooltip("Only for demonstration, do not modify this region")]
     [SerializeField] Transform[] spawnPoints;
-    [SerializeField] List<Transform> stacks;
+    [SerializeField] List<Transform> stacks = new List<Transform>();
     const int _count = 3;
 
     protected override void Awake()
@@ -88,12 +88,14 @@ public class StackSpawner : MonoSingleton<StackSpawner>
                 Material mat = new Material(GridManager.instance.BlockMaterial);
                 //mat.color = GridManager.instance.texturePack.HexagonTextureInfo[GridManager.instance.texturePack.GetTextureEnumIndex(color)].HexColor;
                 mat.SetTexture("_MainTex", GridManager.instance.texturePack.HexagonTextureInfo[GridManager.instance.texturePack.GetTextureEnumIndex(texture)].texture);
-                HexagonController hex = Instantiate(hexagonPrefab, Vector3.zero, Quaternion.identity, stacks[s]);
+                
+                Debug.Log("hereeee");
+                spawnedHexagon = Instantiate(hexagonPrefab, Vector3.zero, Quaternion.identity, stacks[s]);
 
                 float verticalPos = i * GridManager.instance.VERTICAL_PLACEMENT_OFFSET;
                 Vector3 spawnPos = new Vector3(0, verticalPos, 0);
-                hex.transform.localPosition = spawnPos;
-                hex.Initialize(texture, mat);
+                spawnedHexagon.transform.localPosition = spawnPos;
+                spawnedHexagon.Initialize(texture, mat);
             }
         }
     }
