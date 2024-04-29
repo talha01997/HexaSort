@@ -123,69 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &109332265
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 109332267}
-  - component: {fileID: 109332266}
-  m_Layer: 0
-  m_Name: Texture Pack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &109332266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 109332265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a49ab35b69e84a2e995cd9bf5b1d1e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HexagonTextureInfo:
-  - SelectedTextureEnum: 0
-    texture: {fileID: 2800000, guid: 8c9eb9359f66d493c81409ec87c44a62, type: 3}
-    colorMat: {fileID: 0}
-  - SelectedTextureEnum: 1
-    texture: {fileID: 2800000, guid: b2ce1000637d04988afeeac5242b8214, type: 3}
-    colorMat: {fileID: 0}
-  - SelectedTextureEnum: 2
-    texture: {fileID: 2800000, guid: e633c3503d0e54d37ad4c424f1a50700, type: 3}
-    colorMat: {fileID: 0}
-  - SelectedTextureEnum: 3
-    texture: {fileID: 2800000, guid: 549a45f82c66940b6b3a66668578ad40, type: 3}
-    colorMat: {fileID: 0}
-  - SelectedTextureEnum: 4
-    texture: {fileID: 2800000, guid: 0b14afb1612a345f1a38b43b678089b1, type: 3}
-    colorMat: {fileID: 0}
-  - SelectedTextureEnum: 5
-    texture: {fileID: 2800000, guid: 44ae95758656f43478c32f3019faac9a, type: 3}
-    colorMat: {fileID: 0}
---- !u!4 &109332267
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 109332265}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &195784678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -276,7 +213,7 @@ MonoBehaviour:
   hexagonBlockPrefab: {fileID: 3584488951406615420, guid: 7d30b1e689ca5b84999495dac2774721, type: 3}
   BlockMaterial: {fileID: 2100000, guid: e498b5f87ca1740f0bae6dc5ddf3d60f, type: 2}
   blockShader: {fileID: 4800000, guid: 387d1046ba43f44b08e007a11ccda54e, type: 3}
-  texturePack: {fileID: 109332266}
+  texturePack: {fileID: 11400000, guid: c428f91a3748d46e686790fc23bcd860, type: 2}
   CellLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -368,23 +305,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4875300527698177765, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 4875300527698177765, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14
+      value: 11.8
       objectReference: {fileID: 0}
     - target: {fileID: 4875300527698177765, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.5
+      value: -9.75
       objectReference: {fileID: 0}
     - target: {fileID: 4875300527698177765, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.8746197
       objectReference: {fileID: 0}
     - target: {fileID: 4875300527698177765, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: 0.4848096
       objectReference: {fileID: 0}
     - target: {fileID: 6541066755635005487, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: m_RootOrder
