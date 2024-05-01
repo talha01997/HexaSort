@@ -416,6 +416,10 @@ PrefabInstance:
       propertyPath: MaxTargetScore
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 3111620705983290189, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
+      propertyPath: BlastObjectiveAmount
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3934330142165637476, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: m_Name
       value: MANAGERS

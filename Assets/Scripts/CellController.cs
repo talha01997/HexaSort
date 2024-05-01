@@ -115,6 +115,12 @@ public class CellController : MonoBehaviour
                             SelectedNeighbour = SelectedNeighbours[i];
                             break;
                         }
+                        else if (GridManager.instance.GridPlan[(int)SelectedNeighbours[i].x, (int)SelectedNeighbours[i].y].CellObject.GetComponent<CellController>().IsPure()==false && IsPure())
+                        {
+                            SendOrTake = GridManager.TransferType.Take;
+                            SelectedNeighbour = SelectedNeighbours[i];
+                            break;
+                        }
                     }
 
                     //If Transfer Type is "Take" and There is Other Color Rope, Control Second Color Transfer is Possible
