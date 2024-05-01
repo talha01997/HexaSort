@@ -94,6 +94,7 @@ public class CellController : MonoBehaviour
                         if (TopRopeColor == ControlNeighbourGridPart.hexagons[ControlNeighbourGridPart.hexagons.Count - 1].GetTexture())
                         {
                             SelectedNeighbours.Add(new Vector2(NeighbourPosX, NeighbourPosY));
+
                             //StartCoroutine(ControlTransfer(0));
                         }
                     }
@@ -110,7 +111,7 @@ public class CellController : MonoBehaviour
                     {
                         if (GridManager.instance.GridPlan[(int)SelectedNeighbours[i].x, (int)SelectedNeighbours[i].y].CellObject.GetComponent<CellController>().IsPure() && !IsPure())
                         {
-                            SendOrTake = GridManager.TransferType.Send;
+                            SendOrTake = GridManager.TransferType.Take;
                             SelectedNeighbour = SelectedNeighbours[i];
                             break;
                         }
