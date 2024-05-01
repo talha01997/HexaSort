@@ -94,6 +94,7 @@ public class CellController : MonoBehaviour
                         if (TopRopeColor == ControlNeighbourGridPart.hexagons[ControlNeighbourGridPart.hexagons.Count - 1].GetTexture())
                         {
                             SelectedNeighbours.Add(new Vector2(NeighbourPosX, NeighbourPosY));
+                            //StartCoroutine(ControlTransfer(0));
                         }
                     }
                 }
@@ -149,50 +150,9 @@ public class CellController : MonoBehaviour
                     IsAction = true;
                     SelectedGridPart.IsAction = true;
 
-                    //Take
-                    if (SendOrTake == GridManager.TransferType.Take)
-                    {
-                        //Create Take Rope List
-                        List<HexagonController> WillTakeRopeList = new List<HexagonController>();
-                        for (int i = SelectedGridPart.hexagons.Count - 1; i >= 0; i--)
-                        {
-                            if (SelectedGridPart.hexagons[i].GetTexture() == TopRopeColor)
-                            {
-                                WillTakeRopeList.Add(SelectedGridPart.hexagons[i]);
-                            }
-                            else
-                            {
-                                break;
-                            }
-                        }
-
-                        //Update Grid Classes
-                        for (int i = 0; i < WillTakeRopeList.Count; i++)
-                        {
-                            ThisGridClass.CellContentList.Add(SelectedGridClass.CellContentList[SelectedGridClass.CellContentList.Count - 1]);
-                            SelectedGridClass.CellContentList.RemoveAt(SelectedGridClass.CellContentList.Count - 1);
-                        }
-
-                        //Move Rope Objects
-                        for (int i = 0; i < WillTakeRopeList.Count; i++)
-                        {
-                            WillTakeRopeList[i].transform.SetParent(HexStackParent);
-                            //WillTakeRopeList[i].transform.DOLocalJump(new Vector3(0, hexagons.Count * GridManager.instance.VERTICAL_PLACEMENT_OFFSET, 0),1,1, 0.3f);
-
-                            WillTakeRopeList[i].transform.DOLocalRotate(new Vector3(180, 0, 0), .3f);
-                            WillTakeRopeList[i].transform.DOLocalMove(new Vector3(0, hexagons.Count * GridManager.instance.VERTICAL_PLACEMENT_OFFSET, 0), 0.3f);
-
-                            hexagons.Add(WillTakeRopeList[i]);
-                            SelectedGridPart.hexagons.RemoveAt(SelectedGridPart.hexagons.Count - 1);
-
-                            yield return new WaitForSeconds(0.06f);
-                        }
-
-                        SetOccupied(hexagons.Count > 0);
-                    }
 
                     //Send
-                    else if (SendOrTake == GridManager.TransferType.Send)
+                    if (SendOrTake == GridManager.TransferType.Send)
                     {
                         //Create Send Rope List
                         List<HexagonController> WillSendRopeList = new List<HexagonController>();
@@ -221,7 +181,7 @@ public class CellController : MonoBehaviour
                             WillSendRopeList[i].transform.SetParent(SelectedGridPart.HexStackParent);
                             //WillSendRopeList[i].transform.DOLocalJump(new Vector3(0, SelectedGridPart.hexagons.Count * GridManager.instance.VERTICAL_PLACEMENT_OFFSET, 0),1,1, 0.3f);
 
-
+                            print("moved hex");
                             WillSendRopeList[i].transform.DOLocalRotate(new Vector3(180, 0, 0), .3f);
                             WillSendRopeList[i].transform.DOLocalMove(new Vector3(0, SelectedGridPart.hexagons.Count * GridManager.instance.VERTICAL_PLACEMENT_OFFSET, 0), 0.3f);
 
@@ -234,6 +194,49 @@ public class CellController : MonoBehaviour
                         //If There Is No Hex In This Cell Set Occupation Status
                         SetOccupied(hexagons.Count > 0);
                     }
+                    //Take
+                    else if (SendOrTake == GridManager.TransferType.Take)
+                    {
+                        //Create Take Rope List
+                        List<HexagonController> WillTakeRopeList = new List<HexagonController>();
+                        for (int i = SelectedGridPart.hexagons.Count - 1; i >= 0; i--)
+                        {
+                            if (SelectedGridPart.hexagons[i].GetTexture() == TopRopeColor)
+                            {
+                                WillTakeRopeList.Add(SelectedGridPart.hexagons[i]);
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+
+                        //Update Grid Classes
+                        for (int i = 0; i < WillTakeRopeList.Count; i++)
+                        {
+                            ThisGridClass.CellContentList.Add(SelectedGridClass.CellContentList[SelectedGridClass.CellContentList.Count - 1]);
+                            SelectedGridClass.CellContentList.RemoveAt(SelectedGridClass.CellContentList.Count - 1);
+                        }
+
+                        //Move Rope Objects
+                        for (int i = 0; i < WillTakeRopeList.Count; i++)
+                        {
+                            WillTakeRopeList[i].transform.SetParent(HexStackParent);
+                            //WillTakeRopeList[i].transform.DOLocalJump(new Vector3(0, hexagons.Count * GridManager.instance.VERTICAL_PLACEMENT_OFFSET, 0),1,1, 0.3f);
+                            print("moved rope");
+                            WillTakeRopeList[i].transform.DOLocalRotate(new Vector3(180, 0, 0), .3f);
+                            WillTakeRopeList[i].transform.DOLocalMove(new Vector3(0, hexagons.Count * GridManager.instance.VERTICAL_PLACEMENT_OFFSET, 0), 0.3f);
+
+                            hexagons.Add(WillTakeRopeList[i]);
+                            SelectedGridPart.hexagons.RemoveAt(SelectedGridPart.hexagons.Count - 1);
+
+                            yield return new WaitForSeconds(0.06f);
+                        }
+
+                        SetOccupied(hexagons.Count > 0);
+                    }
+
+                    
 
                     //Wait Transfer Complete Time
                     yield return new WaitForSeconds(0.36f);
@@ -265,7 +268,7 @@ public class CellController : MonoBehaviour
                 performBlast = true;
 
         }
-        //if (hexagons.Count > 1)
+        /*if (hexagons.Count > 1)
         //{
         //    int matchCount = 0;
         //    ColorInfo.ColorEnum TopRopeColor = hexagons[hexagons.Count - 1].GetColor();
@@ -287,7 +290,7 @@ public class CellController : MonoBehaviour
         //    }
 
         //    return false;
-        //}
+        //}*/
 
         return performBlast;
     }

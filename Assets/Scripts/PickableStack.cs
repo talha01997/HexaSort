@@ -83,7 +83,7 @@ public class PickableStack : MonoBehaviour
         InputManager.instance.TriggerStackPlacedOnGridEvent(this);
         targetCell.SetOccupied(true);
         targetCell.StartCoroutine(targetCell.ControlTransfer(.4f));
-
+        print("started transfer");
         DestroySelf();
     }
 
