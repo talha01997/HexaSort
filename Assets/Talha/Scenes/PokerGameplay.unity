@@ -292,6 +292,7 @@ MonoBehaviour:
   - {fileID: 5146797381396778738, guid: 60c664a03ab4399499aac2fbee03fea3, type: 3}
   - {fileID: 1233170751156159584, guid: a05974df8aa846b418b403bda62774cf, type: 3}
   - {fileID: 6372623548293231570, guid: fb9bf534570108042ad897d0f494493c, type: 3}
+  - {fileID: 6372623548293231570, guid: 3303d9f68ad5c4d18a3f61eb0ef51ff0, type: 3}
 --- !u!1001 &1871431838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -414,7 +415,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3111620705983290189, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: MaxTargetScore
-      value: 80
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3111620705983290189, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: BlastObjectiveAmount

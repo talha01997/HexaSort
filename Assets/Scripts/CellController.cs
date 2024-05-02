@@ -275,29 +275,29 @@ public class CellController : MonoBehaviour
                 performBlast = true;
 
         }
-        /*if (hexagons.Count > 1)
-        //{
-        //    int matchCount = 0;
-        //    ColorInfo.ColorEnum TopRopeColor = hexagons[hexagons.Count - 1].GetColor();
-        //    for (int i = hexagons.Count - 2; i >= 0; i--)
-        //    {
-        //        if (hexagons[i].GetColor() == TopRopeColor)
-        //        {
-        //            matchCount++;
-        //        }
-        //        else
-        //        {
-        //            break;
-        //        }
-        //    }
+        if (hexagons.Count > 1)
+        {
+            int matchCount = 0;
+            TextureInfo.TextureEnum TopRopeColor = hexagons[hexagons.Count - 1].GetTexture();
+            for (int i = hexagons.Count - 2; i >= 0; i--)
+            {
+                if (hexagons[i].GetTexture() == TopRopeColor)
+                {
+                    matchCount++;
+                }
+                else
+                {
+                    break;
+                }
+            }
 
-        //    if (matchCount >= GameManager.instance.BlastObjectiveAmount)
-        //    {
-        //        return true;
-        //    }
+            if (matchCount >= GameManager.instance.BlastObjectiveAmount)
+            {
+                return true;
+            }
 
-        //    return false;
-        //}*/
+            return false;
+        }
 
         return performBlast;
     }
@@ -311,6 +311,12 @@ public class CellController : MonoBehaviour
                 return false;
             }
         }
+
+        return true;
+    }
+
+    bool HasConsecutiveColoredHex()
+    {
 
         return true;
     }
