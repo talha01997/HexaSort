@@ -216,6 +216,7 @@ MonoBehaviour:
   CellPrefab: {fileID: 606759711545310851, guid: fa946d4c44b15284c923aec9d610e84e, type: 3}
   hexagonBlockPrefab: {fileID: 3584488951406615420, guid: 7d30b1e689ca5b84999495dac2774721, type: 3}
   BlockMaterial: {fileID: 2100000, guid: e498b5f87ca1740f0bae6dc5ddf3d60f, type: 2}
+  lockedMaterial: {fileID: 2100000, guid: 7d1153ecfba25433aac03385eac73a63, type: 2}
   blockShader: {fileID: 4800000, guid: 387d1046ba43f44b08e007a11ccda54e, type: 3}
   texturePack: {fileID: 11400000, guid: c428f91a3748d46e686790fc23bcd860, type: 2}
   CellLayer:
@@ -336,6 +337,7 @@ MonoBehaviour:
   - {fileID: 5146797381396778738, guid: 2557bd8e72953486a97568357d0d9bf7, type: 3}
   - {fileID: 926402517731762762, guid: 3fdf7e43a4b76436ba119868a4ef2eaa, type: 3}
   - {fileID: 926402517731762762, guid: 8b27f78bfbb344a0fabe371237b99b6c, type: 3}
+  - {fileID: 926402517731762762, guid: 57f81bf3a0fee44b89add779e2e05f42, type: 3}
 --- !u!1 &882135468
 GameObject:
   m_ObjectHideFlags: 0

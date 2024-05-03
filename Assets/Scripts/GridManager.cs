@@ -94,6 +94,7 @@ public class GridManager : MonoSingleton<GridManager>
                     cellController.SetCoordinates(x, y);
 
                 }
+                // locking codeeee
                 //else if (!GridPlan[x, y].isOpen)
                 //{
                 //    GameObject cloneCellGO = Instantiate(CellPrefab, Vector3.zero, CellPrefab.transform.rotation, transform);
@@ -105,10 +106,10 @@ public class GridManager : MonoSingleton<GridManager>
                 //    GridPlan[x, y].CellObject = cloneCellGO;
 
                 //    cloneCellGO.name = x.ToString() + "," + y.ToString();
-                //    cloneCellGO.GetComponent<MeshRenderer>().material = lockedMaterial;
+                    
                 //    CellController cellController = cloneCellGO.GetComponent<CellController>();
                 //    cellController.SetCoordinates(x, y);
-
+                //    cellController.opaqueMesh.GetComponent<MeshRenderer>().material = lockedMaterial;
                 //}
 
                 if (GridPlan[x, y].CellContentList.Count != 0 && GridPlan[x, y].isOpen)
