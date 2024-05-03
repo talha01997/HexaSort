@@ -10,7 +10,7 @@ public class GridManager : MonoSingleton<GridManager>
     [Header("References")]
     [SerializeField] GameObject CellPrefab;
     [SerializeField] HexagonController hexagonBlockPrefab;
-    public Material BlockMaterial;
+    public Material BlockMaterial, lockedMaterial;
     public Shader blockShader;
     public TexturePack texturePack;
     public LayerMask CellLayer;
@@ -94,6 +94,22 @@ public class GridManager : MonoSingleton<GridManager>
                     cellController.SetCoordinates(x, y);
 
                 }
+                //else if (!GridPlan[x, y].isOpen)
+                //{
+                //    GameObject cloneCellGO = Instantiate(CellPrefab, Vector3.zero, CellPrefab.transform.rotation, transform);
+
+                //    cloneCellGO.transform.position =
+                //        new Vector3(x * CELL_HORIZONTAL_OFFSET, 0,
+                //        -(((x % 2) * (CELL_VERTICAL_OFFSET / 2)) + y * CELL_VERTICAL_OFFSET));
+
+                //    GridPlan[x, y].CellObject = cloneCellGO;
+
+                //    cloneCellGO.name = x.ToString() + "," + y.ToString();
+                //    cloneCellGO.GetComponent<MeshRenderer>().material = lockedMaterial;
+                //    CellController cellController = cloneCellGO.GetComponent<CellController>();
+                //    cellController.SetCoordinates(x, y);
+
+                //}
 
                 if (GridPlan[x, y].CellContentList.Count != 0 && GridPlan[x, y].isOpen)
                 {
