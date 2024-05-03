@@ -230,7 +230,7 @@ public class CellController : MonoBehaviour
                         {
                             WillTakeRopeList[i].transform.SetParent(HexStackParent);
                             //WillTakeRopeList[i].transform.DOLocalJump(new Vector3(0, hexagons.Count * GridManager.instance.VERTICAL_PLACEMENT_OFFSET, 0),1,1, 0.3f);
-                            print("moved rope");
+                            //print("moved rope");
                             WillTakeRopeList[i].transform.DOLocalRotate(new Vector3(180, 0, 0), .3f);
                             WillTakeRopeList[i].transform.DOLocalMove(new Vector3(0, hexagons.Count * GridManager.instance.VERTICAL_PLACEMENT_OFFSET, 0), 0.3f);
 

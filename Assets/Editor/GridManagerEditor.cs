@@ -22,19 +22,19 @@ public class GridManagerEditor : Editor
         GUI.backgroundColor = Color.red;
         if (GUILayout.Button("RED", GUILayout.ExpandWidth(true)))
         {
-            colorEnum = TextureInfo.TextureEnum.Chip1;
+            colorEnum = TextureInfo.TextureEnum.Red;
             addingHexagons = true;
         }
         GUI.backgroundColor = Color.blue;
         if (GUILayout.Button("BLUE", GUILayout.ExpandWidth(true)))
         {
-            colorEnum = TextureInfo.TextureEnum.Chip2;
+            colorEnum = TextureInfo.TextureEnum.Green;
             addingHexagons = true;
         }
         GUI.backgroundColor = Color.yellow;
         if (GUILayout.Button("YELLOW", GUILayout.ExpandWidth(true)))
         {
-            colorEnum = TextureInfo.TextureEnum.Chip3;
+            colorEnum = TextureInfo.TextureEnum.Blue;
             addingHexagons = true;
         }
         GUI.backgroundColor = Color.white; // Renkleri s�f�rla

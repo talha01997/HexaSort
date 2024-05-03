@@ -1866,7 +1866,7 @@ GameObject:
   - component: {fileID: 6738420344172560886}
   - component: {fileID: 926402517731762762}
   m_Layer: 0
-  m_Name: TEMPLATE_Grid_Info
+  m_Name: Grid_Info_08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1924,8 +1924,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdb90f5cb749fce498f4c4f2b14491bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startInfos: []
-  levelKey: Test
+  startInfos:
+  - Coordinates: {x: 2, y: 1}
+    ContentInfo: 
+    isOpen: 0
+  - Coordinates: {x: 2, y: 2}
+    ContentInfo: 
+    isOpen: 0
+  - Coordinates: {x: 2, y: 3}
+    ContentInfo: 
+    isOpen: 0
+  - Coordinates: {x: 1, y: 1}
+    ContentInfo: 010000000200000001000000
+    isOpen: 1
+  - Coordinates: {x: 3, y: 1}
+    ContentInfo: 02000000
+    isOpen: 1
+  - Coordinates: {x: 1, y: 3}
+    ContentInfo: 02000000
+    isOpen: 1
+  - Coordinates: {x: 3, y: 3}
+    ContentInfo: 010000000200000003000000
+    isOpen: 1
+  levelKey: Lvl08
 --- !u!1 &2548470294137733030
 GameObject:
   m_ObjectHideFlags: 0
