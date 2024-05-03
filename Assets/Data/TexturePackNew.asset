@@ -14,20 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HexagonTextureInfo:
   - SelectedTextureEnum: 0
-    texture: {fileID: 2800000, guid: 8c9eb9359f66d493c81409ec87c44a62, type: 3}
+    texture: {fileID: 2800000, guid: 858e6f74d96b84434b33646743ec8af7, type: 3}
     colorMat: {fileID: 0}
   - SelectedTextureEnum: 1
-    texture: {fileID: 2800000, guid: b2ce1000637d04988afeeac5242b8214, type: 3}
+    texture: {fileID: 2800000, guid: 74ab35b1298414f1c9482459a237e151, type: 3}
     colorMat: {fileID: 0}
   - SelectedTextureEnum: 2
-    texture: {fileID: 2800000, guid: e633c3503d0e54d37ad4c424f1a50700, type: 3}
+    texture: {fileID: 2800000, guid: 152100d63db1e4bb38ca695cdce1a041, type: 3}
     colorMat: {fileID: 0}
   - SelectedTextureEnum: 3
-    texture: {fileID: 2800000, guid: 549a45f82c66940b6b3a66668578ad40, type: 3}
+    texture: {fileID: 2800000, guid: d380513c6184647ee9da7e1315b1b034, type: 3}
     colorMat: {fileID: 0}
   - SelectedTextureEnum: 4
-    texture: {fileID: 2800000, guid: 0b14afb1612a345f1a38b43b678089b1, type: 3}
+    texture: {fileID: 2800000, guid: f5cd577d8803d4eeeb3e3b97f8346a25, type: 3}
     colorMat: {fileID: 0}
   - SelectedTextureEnum: 5
-    texture: {fileID: 2800000, guid: 44ae95758656f43478c32f3019faac9a, type: 3}
+    texture: {fileID: 2800000, guid: 15256b225f007460a8a2458f7a7fed75, type: 3}
     colorMat: {fileID: 0}

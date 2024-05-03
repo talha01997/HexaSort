@@ -315,11 +315,6 @@ public class CellController : MonoBehaviour
         return true;
     }
 
-    bool HasConsecutiveColoredHex()
-    {
-
-        return true;
-    }
     public void BlastSelectedHexList(List<HexagonController> hexList)
     {
         for (int i = 0; i < hexList.Count; i++)
