@@ -106,7 +106,7 @@ public class PickableStack : MonoBehaviour
         {
             if (hit.collider.transform.parent.parent.TryGetComponent(out CellController cell))
             {
-                if (cell.isOccupied) return null;
+                if (cell.isOccupied || cell.isLocked) return null;
                 return cell;
             }
         }

@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -10,11 +11,13 @@ public class CellController : MonoBehaviour
     public Transform HexStackParent;
     public GameObject opaqueMesh;
     public GameObject transparentMesh;
-
+    public GameObject scoreUnlock;
+    public TextMeshPro scoreTxt;
     [Header("Debug")]
     public bool IsAction;
     public bool isOccupied;
     public bool isOpen = true;
+    public bool isLocked;
     [SerializeField] Vector2 _coordinates = Vector2.zero;
 
     [Header("Hexagons Related")]
@@ -265,6 +268,18 @@ public class CellController : MonoBehaviour
             GameManager.instance.CheckFailStatus();
         }
         GameManager.instance.CheckFailStatus();
+    }
+    private void Update()
+    {
+        //LookAtCam();
+    }
+    void LookAtCam()
+    {
+        //scoreUnlock.transform.LookAt(Camera.main.transform);
+        for (int i = 0; i < scoreUnlock.transform.childCount; i++)
+        {
+            scoreUnlock.transform.GetChild(i).LookAt(Camera.main.transform);
+        }
     }
     public bool IsThereBlast()
     {

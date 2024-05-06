@@ -21,11 +21,11 @@ public class GridManager : MonoSingleton<GridManager>
 
     [Header("Debug")]
     public CellData[,] GridPlan;
-    private const float CELL_HORIZONTAL_OFFSET = 0.75f;
-    private const float CELL_VERTICAL_OFFSET = 0.8660254f;
+    private const float CELL_HORIZONTAL_OFFSET = 0.85f;
+    private const float CELL_VERTICAL_OFFSET = 0.95f;
     public float VERTICAL_PLACEMENT_OFFSET = 0.2f;
     [SerializeField] List<StartInfo> startInfos = new List<StartInfo>();
-
+    public List<CellController> scoreLockedCells, adLockedCells;
 
     [Space(125)]
     public GridInfoAssigner CurrentGridInfo;
@@ -65,6 +65,11 @@ public class GridManager : MonoSingleton<GridManager>
                 if (ContainsInStartInfo(x, y, out index))
                 {
                     GridPlan[x, y].isOpen = startInfos[index].isOpen;
+                    GridPlan[x, y].isLocked = startInfos[index].isLocked;
+                    GridPlan[x, y].unlockWithAd = startInfos[index].unlockWithAd;
+                    GridPlan[x, y].unlockWithScore = startInfos[index].unlockWithScore;
+                    GridPlan[x, y].scoreToUnlock = startInfos[index].scoreToUnlock;
+
                     List<TextureInfo.TextureEnum> CE = new List<TextureInfo.TextureEnum>();
                     
                     for (int i = 0; i < startInfos[index].ContentInfo.Count; i++)
@@ -95,22 +100,25 @@ public class GridManager : MonoSingleton<GridManager>
 
                 }
                 // locking codeeee
-                //else if (!GridPlan[x, y].isOpen)
-                //{
-                //    GameObject cloneCellGO = Instantiate(CellPrefab, Vector3.zero, CellPrefab.transform.rotation, transform);
+                else if (!GridPlan[x, y].isOpen && GridPlan[x, y].isLocked)
+                {
+                    GameObject cloneCellGO = Instantiate(CellPrefab, Vector3.zero, CellPrefab.transform.rotation, transform);
 
-                //    cloneCellGO.transform.position =
-                //        new Vector3(x * CELL_HORIZONTAL_OFFSET, 0,
-                //        -(((x % 2) * (CELL_VERTICAL_OFFSET / 2)) + y * CELL_VERTICAL_OFFSET));
+                    cloneCellGO.transform.position =
+                        new Vector3(x * CELL_HORIZONTAL_OFFSET, 0,
+                        -(((x % 2) * (CELL_VERTICAL_OFFSET / 2)) + y * CELL_VERTICAL_OFFSET));
 
-                //    GridPlan[x, y].CellObject = cloneCellGO;
+                    GridPlan[x, y].CellObject = cloneCellGO;
 
-                //    cloneCellGO.name = x.ToString() + "," + y.ToString();
-                    
-                //    CellController cellController = cloneCellGO.GetComponent<CellController>();
-                //    cellController.SetCoordinates(x, y);
-                //    cellController.opaqueMesh.GetComponent<MeshRenderer>().material = lockedMaterial;
-                //}
+                    cloneCellGO.name = x.ToString() + "," + y.ToString();
+
+                    CellController cellController = cloneCellGO.GetComponent<CellController>();
+                    cellController.SetCoordinates(x, y);
+                    cellController.opaqueMesh.GetComponent<MeshRenderer>().material = lockedMaterial;
+                    cellController.isLocked = true;
+
+                    LockCells(GridPlan, x, y, cellController);
+                }
 
                 if (GridPlan[x, y].CellContentList.Count != 0 && GridPlan[x, y].isOpen)
                 {
@@ -154,6 +162,34 @@ public class GridManager : MonoSingleton<GridManager>
         cloneBlock.Initialize(texture, mat);
     }
 
+    public void LockCells(CellData[,] cellData,int x,int y, CellController cellController)
+    {
+        if (cellData[x, y].isLocked)
+        {
+            if (cellData[x, y].unlockWithAd)
+            {
+                //
+            }
+            else if (cellData[x, y].unlockWithScore)
+            {
+                //
+                scoreLockedCells.Add(cellController);
+                cellController.scoreUnlock.SetActive(true);
+                cellController.scoreTxt.text = cellData[x, y].scoreToUnlock.ToString();
+            }
+        }
+    }
+
+    public void CheckLockedCells(int score)
+    {
+        foreach (var cell in scoreLockedCells)
+        {
+            //if (score > cell.scoreTxt)
+            {
+                //scoreLockedCells.Remove(cell);
+            }
+        }
+    }
     bool ContainsInStartInfo(int x, int y, out int index)
     {
         for (int i = 0; i < startInfos.Count; i++)
@@ -224,5 +260,7 @@ public class GridManager : MonoSingleton<GridManager>
         public Vector2Int Coordinates;
         public List<TextureInfo.TextureEnum> ContentInfo;
         public bool isOpen;
+        public bool isLocked, unlockWithAd, unlockWithScore;
+        public int scoreToUnlock;
     }
 }
