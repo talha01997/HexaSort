@@ -18,6 +18,7 @@ public class CellController : MonoBehaviour
     public bool isOccupied;
     public bool isOpen = true;
     public bool isLocked;
+    public int scoreToUnlock;
     [SerializeField] Vector2 _coordinates = Vector2.zero;
 
     [Header("Hexagons Related")]

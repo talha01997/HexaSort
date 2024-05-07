@@ -217,7 +217,7 @@ MonoBehaviour:
   hexagonBlockPrefab: {fileID: 3584488951406615420, guid: 7d30b1e689ca5b84999495dac2774721, type: 3}
   BlockMaterial: {fileID: 2100000, guid: e498b5f87ca1740f0bae6dc5ddf3d60f, type: 2}
   lockedMaterial: {fileID: 2100000, guid: 7d1153ecfba25433aac03385eac73a63, type: 2}
-  blockShader: {fileID: 4800000, guid: 387d1046ba43f44b08e007a11ccda54e, type: 3}
+  cellMat: {fileID: 2100000, guid: b08c587413ad8054faccb721822dc988, type: 2}
   texturePack: {fileID: 11400000, guid: c428f91a3748d46e686790fc23bcd860, type: 2}
   CellLayer:
     serializedVersion: 2
@@ -226,6 +226,8 @@ MonoBehaviour:
   _gridSizeY: 5
   VERTICAL_PLACEMENT_OFFSET: 0.1
   startInfos: []
+  scoreLockedCells: []
+  adLockedCells: []
   CurrentGridInfo: {fileID: 0}
 --- !u!4 &503795491
 Transform:
@@ -436,7 +438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3111620705983290189, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: MaxTargetScore
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3111620705983290189, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: BlastObjectiveAmount
@@ -448,23 +450,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4875300527698177765, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4875300527698177765, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.8
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4875300527698177765, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.75
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4875300527698177765, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8746197
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4875300527698177765, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.4848096
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6541066755635005487, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: m_RootOrder

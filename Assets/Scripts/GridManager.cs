@@ -1,5 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Linq;
+
 public class GridManager : MonoSingleton<GridManager>
 {
     public enum TransferType
@@ -10,8 +13,7 @@ public class GridManager : MonoSingleton<GridManager>
     [Header("References")]
     [SerializeField] GameObject CellPrefab;
     [SerializeField] HexagonController hexagonBlockPrefab;
-    public Material BlockMaterial, lockedMaterial;
-    public Shader blockShader;
+    public Material BlockMaterial, lockedMaterial, cellMat;
     public TexturePack texturePack;
     public LayerMask CellLayer;
 
@@ -116,7 +118,7 @@ public class GridManager : MonoSingleton<GridManager>
                     cellController.SetCoordinates(x, y);
                     cellController.opaqueMesh.GetComponent<MeshRenderer>().material = lockedMaterial;
                     cellController.isLocked = true;
-
+                    cellController.scoreToUnlock = GridPlan[x, y].scoreToUnlock;
                     LockCells(GridPlan, x, y, cellController);
                 }
 
@@ -182,11 +184,15 @@ public class GridManager : MonoSingleton<GridManager>
 
     public void CheckLockedCells(int score)
     {
-        foreach (var cell in scoreLockedCells)
+        foreach (CellController cell in scoreLockedCells.ToList())
         {
-            //if (score > cell.scoreTxt)
+            if (score > cell.scoreToUnlock)
             {
-                //scoreLockedCells.Remove(cell);
+                cell.scoreUnlock.SetActive(false);
+                cell.isLocked = false;
+                cell.opaqueMesh.GetComponent<MeshRenderer>().material = cellMat;
+                //GridPlan[(int)cell.GetCoordinates().x, (int)cell.GetCoordinates().y].CellContentList = new();
+                scoreLockedCells.Remove(cell);
             }
         }
     }

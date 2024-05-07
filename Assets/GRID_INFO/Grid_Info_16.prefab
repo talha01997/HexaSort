@@ -218,6 +218,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 2, y: 0}
   hexagons: []
   contentInfo: 
@@ -276,6 +277,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 2, y: 1}
   hexagons: []
   contentInfo: 
@@ -334,6 +336,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 1, y: 2}
   hexagons: []
   contentInfo: 
@@ -392,6 +395,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 1, y: 1}
   hexagons: []
   contentInfo: 
@@ -776,6 +780,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 1, y: 0}
   hexagons: []
   contentInfo: 
@@ -1488,6 +1493,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 0, y: 1}
   hexagons: []
   contentInfo: 
@@ -1873,6 +1879,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 4, y: 0}
   hexagons: []
   contentInfo: 
@@ -1952,14 +1959,14 @@ MonoBehaviour:
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 75
+    scoreToUnlock: 30
   - Coordinates: {x: 1, y: 2}
     ContentInfo: 
     isOpen: 0
-    isLocked: 0
+    isLocked: 1
     unlockWithAd: 0
-    unlockWithScore: 0
-    scoreToUnlock: 0
+    unlockWithScore: 1
+    scoreToUnlock: 45
   - Coordinates: {x: 1, y: 4}
     ContentInfo: 
     isOpen: 0
@@ -2354,6 +2361,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 2, y: 2}
   hexagons: []
   contentInfo: 
@@ -2868,6 +2876,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 0, y: 4}
   hexagons: []
   contentInfo: 
@@ -3416,6 +3425,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 3, y: 2}
   hexagons: []
   contentInfo: 
@@ -3507,6 +3517,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 0, y: 3}
   hexagons: []
   contentInfo: 
@@ -4245,6 +4256,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 2, y: 3}
   hexagons: []
   contentInfo: 
@@ -4563,6 +4575,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 0, y: 0}
   hexagons: []
   contentInfo: 
@@ -4621,6 +4634,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 3, y: 0}
   hexagons: []
   contentInfo: 
@@ -4872,6 +4886,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 3, y: 4}
   hexagons: []
   contentInfo: 
@@ -5061,6 +5076,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 4, y: 2}
   hexagons: []
   contentInfo: 
@@ -5248,6 +5264,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 2, y: 4}
   hexagons: []
   contentInfo: 
@@ -5435,6 +5452,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 1, y: 3}
   hexagons: []
   contentInfo: 
@@ -5591,6 +5609,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 4, y: 3}
   hexagons: []
   contentInfo: 
@@ -5778,6 +5797,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 3, y: 1}
   hexagons: []
   contentInfo: 
@@ -5836,6 +5856,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 4, y: 1}
   hexagons: []
   contentInfo: 
@@ -6056,6 +6077,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 1, y: 4}
   hexagons: []
   contentInfo: 
@@ -7089,6 +7111,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 1
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 4, y: 4}
   hexagons: []
   contentInfo: 
@@ -7147,6 +7170,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 3, y: 3}
   hexagons: []
   contentInfo: 
@@ -7205,6 +7229,7 @@ MonoBehaviour:
   isOccupied: 0
   isOpen: 0
   isLocked: 0
+  scoreToUnlock: 0
   _coordinates: {x: 0, y: 2}
   hexagons: []
   contentInfo: 
