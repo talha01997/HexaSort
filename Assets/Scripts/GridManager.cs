@@ -99,7 +99,7 @@ public class GridManager : MonoSingleton<GridManager>
                     cloneCellGO.name = x.ToString() + "," + y.ToString();
                     CellController cellController = cloneCellGO.GetComponent<CellController>();
                     cellController.SetCoordinates(x, y);
-                    if (GridPlan[x, y].isLocked)
+                    if (GridPlan[x, y].isLocked && GridPlan[x, y].unlockWithScore)
                     {
                         cellController.opaqueMesh.GetComponent<MeshRenderer>().material = lockedMaterial;
                         cellController.isLocked = true;
