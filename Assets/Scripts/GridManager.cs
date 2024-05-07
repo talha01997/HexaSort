@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Linq;
+using Unity.VisualScripting;
 
 public class GridManager : MonoSingleton<GridManager>
 {
@@ -99,11 +100,8 @@ public class GridManager : MonoSingleton<GridManager>
                     cloneCellGO.name = x.ToString() + "," + y.ToString();
                     CellController cellController = cloneCellGO.GetComponent<CellController>();
                     cellController.SetCoordinates(x, y);
-                    if (GridPlan[x, y].isLocked && GridPlan[x, y].unlockWithScore)
+                    if (GridPlan[x, y].isLocked)
                     {
-                        cellController.opaqueMesh.GetComponent<MeshRenderer>().material = lockedMaterial;
-                        cellController.isLocked = true;
-                        cellController.scoreToUnlock = GridPlan[x, y].scoreToUnlock;
                         LockCells(GridPlan, x, y, cellController);
                     }
                 }
@@ -170,21 +168,23 @@ public class GridManager : MonoSingleton<GridManager>
         cloneBlock.Initialize(texture, mat);
     }
 
-    public void LockCells(CellData[,] cellData,int x,int y, CellController cellController)
+    public void LockCells(CellData[,] cellData, int x, int y, CellController cellController)
     {
-        if (cellData[x, y].isLocked)
+        cellController.opaqueMesh.GetComponent<MeshRenderer>().material = lockedMaterial;
+        cellController.isLocked = true;
+        
+        if (cellData[x, y].unlockWithAd)
         {
-            if (cellData[x, y].unlockWithAd)
-            {
-                //
-            }
-            else if (cellData[x, y].unlockWithScore)
-            {
-                //
-                scoreLockedCells.Add(cellController);
-                cellController.scoreUnlock.SetActive(true);
-                cellController.scoreTxt.text = cellData[x, y].scoreToUnlock.ToString();
-            }
+            cellController.lockedWithAd = cellData[x, y].unlockWithAd;
+            cellController.adUnlock.SetActive(true);
+            cellController.AddComponent<BoxCollider>();
+        }
+        else if (cellData[x, y].unlockWithScore)
+        {
+            cellController.scoreToUnlock = cellData[x, y].scoreToUnlock;
+            scoreLockedCells.Add(cellController);
+            cellController.scoreUnlock.SetActive(true);
+            cellController.scoreTxt.text = cellData[x, y].scoreToUnlock.ToString();
         }
     }
 

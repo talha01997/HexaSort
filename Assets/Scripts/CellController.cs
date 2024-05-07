@@ -11,13 +11,14 @@ public class CellController : MonoBehaviour
     public Transform HexStackParent;
     public GameObject opaqueMesh;
     public GameObject transparentMesh;
-    public GameObject scoreUnlock;
+    public GameObject scoreUnlock, adUnlock;
     public TextMeshPro scoreTxt;
     [Header("Debug")]
     public bool IsAction;
     public bool isOccupied;
     public bool isOpen = true;
-    public bool isLocked;
+    public bool isLocked, lockedWithAd;
+    public bool canClick;
     public int scoreToUnlock;
     [SerializeField] Vector2 _coordinates = Vector2.zero;
 
@@ -28,6 +29,19 @@ public class CellController : MonoBehaviour
     {
         SetHexagonLists();
     }
+
+    private void OnMouseUp()
+    {
+        if (lockedWithAd)
+        {
+            adUnlock.SetActive(false);
+            isLocked = false;
+            lockedWithAd = false;
+            opaqueMesh.GetComponent<MeshRenderer>().material = GridManager.instance.cellMat;
+            Destroy(GetComponent<BoxCollider>());
+        }
+    }
+
     public IEnumerator ControlTransfer(float StartControlDelay)
     {
         //If There is Any Hex
@@ -270,10 +284,15 @@ public class CellController : MonoBehaviour
         }
         GameManager.instance.CheckFailStatus();
     }
-    private void Update()
-    {
-        //LookAtCam();
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetMouseButtonUp(0) && canClick)
+    //    {
+    //        adUnlock.SetActive(false);
+    //        isLocked = false;
+    //        Destroy(GetComponent<BoxCollider>());
+    //    }
+    //}
     void LookAtCam()
     {
         //scoreUnlock.transform.LookAt(Camera.main.transform);
