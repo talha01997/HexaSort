@@ -99,28 +99,34 @@ public class GridManager : MonoSingleton<GridManager>
                     cloneCellGO.name = x.ToString() + "," + y.ToString();
                     CellController cellController = cloneCellGO.GetComponent<CellController>();
                     cellController.SetCoordinates(x, y);
-
+                    if (GridPlan[x, y].isLocked)
+                    {
+                        cellController.opaqueMesh.GetComponent<MeshRenderer>().material = lockedMaterial;
+                        cellController.isLocked = true;
+                        cellController.scoreToUnlock = GridPlan[x, y].scoreToUnlock;
+                        LockCells(GridPlan, x, y, cellController);
+                    }
                 }
                 // locking codeeee
-                else if (!GridPlan[x, y].isOpen && GridPlan[x, y].isLocked)
-                {
-                    GameObject cloneCellGO = Instantiate(CellPrefab, Vector3.zero, CellPrefab.transform.rotation, transform);
+                //if (GridPlan[x, y].isLocked)
+                //{
+                //    GameObject cloneCellGO = Instantiate(CellPrefab, Vector3.zero, CellPrefab.transform.rotation, transform);
 
-                    cloneCellGO.transform.position =
-                        new Vector3(x * CELL_HORIZONTAL_OFFSET, 0,
-                        -(((x % 2) * (CELL_VERTICAL_OFFSET / 2)) + y * CELL_VERTICAL_OFFSET));
+                //    cloneCellGO.transform.position =
+                //        new Vector3(x * CELL_HORIZONTAL_OFFSET, 0,
+                //        -(((x % 2) * (CELL_VERTICAL_OFFSET / 2)) + y * CELL_VERTICAL_OFFSET));
 
-                    GridPlan[x, y].CellObject = cloneCellGO;
+                //    GridPlan[x, y].CellObject = cloneCellGO;
 
-                    cloneCellGO.name = x.ToString() + "," + y.ToString();
+                //    cloneCellGO.name = x.ToString() + "," + y.ToString();
 
-                    CellController cellController = cloneCellGO.GetComponent<CellController>();
-                    cellController.SetCoordinates(x, y);
-                    cellController.opaqueMesh.GetComponent<MeshRenderer>().material = lockedMaterial;
-                    cellController.isLocked = true;
-                    cellController.scoreToUnlock = GridPlan[x, y].scoreToUnlock;
-                    LockCells(GridPlan, x, y, cellController);
-                }
+                //    CellController cellController = cloneCellGO.GetComponent<CellController>();
+                //    cellController.SetCoordinates(x, y);
+                //    cellController.opaqueMesh.GetComponent<MeshRenderer>().material = lockedMaterial;
+                //    cellController.isLocked = true;
+                //    cellController.scoreToUnlock = GridPlan[x, y].scoreToUnlock;
+                //    LockCells(GridPlan, x, y, cellController);
+                //}
 
                 if (GridPlan[x, y].CellContentList.Count != 0 && GridPlan[x, y].isOpen)
                 {
@@ -191,8 +197,9 @@ public class GridManager : MonoSingleton<GridManager>
                 cell.scoreUnlock.SetActive(false);
                 cell.isLocked = false;
                 cell.opaqueMesh.GetComponent<MeshRenderer>().material = cellMat;
-                //GridPlan[(int)cell.GetCoordinates().x, (int)cell.GetCoordinates().y].CellContentList = new();
+                GridPlan[(int)cell.GetCoordinates().x, (int)cell.GetCoordinates().y].CellContentList = new();
                 scoreLockedCells.Remove(cell);
+                print(GridPlan);
             }
         }
     }

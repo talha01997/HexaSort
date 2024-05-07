@@ -1955,18 +1955,18 @@ MonoBehaviour:
   startInfos:
   - Coordinates: {x: 1, y: 1}
     ContentInfo: 
-    isOpen: 0
+    isOpen: 1
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 30
+    scoreToUnlock: 15
   - Coordinates: {x: 1, y: 2}
     ContentInfo: 
-    isOpen: 0
+    isOpen: 1
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 45
+    scoreToUnlock: 25
   - Coordinates: {x: 1, y: 4}
     ContentInfo: 
     isOpen: 0
