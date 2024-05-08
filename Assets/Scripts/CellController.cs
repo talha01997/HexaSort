@@ -36,6 +36,7 @@ public class CellController : MonoBehaviour
         {
             adUnlock.SetActive(false);
             isLocked = false;
+            isOccupied = false;
             lockedWithAd = false;
             opaqueMesh.GetComponent<MeshRenderer>().material = GridManager.instance.cellMat;
             Destroy(GetComponent<BoxCollider>());

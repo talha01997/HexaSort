@@ -767,9 +767,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 3500357834818577688}
   opaqueMesh: {fileID: 3998509174506441456}
   transparentMesh: {fileID: 5768043625519193360}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 0
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 1, y: 0}
   hexagons: []
   contentInfo: 
@@ -1000,9 +1007,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 2237203133324844822}
   opaqueMesh: {fileID: 4325432835334399633}
   transparentMesh: {fileID: 3447649022788702006}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 0
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 3, y: 4}
   hexagons: []
   contentInfo: 
@@ -1055,9 +1069,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 4669102583540089976}
   opaqueMesh: {fileID: 167871301551174741}
   transparentMesh: {fileID: 8721274029944236732}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 1
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 3, y: 0}
   hexagons: []
   contentInfo: 01000000010000000100000001000000
@@ -1420,9 +1441,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 4864920838974775152}
   opaqueMesh: {fileID: 4672365934939876560}
   transparentMesh: {fileID: 7515004800098688555}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 0
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 4, y: 2}
   hexagons: []
   contentInfo: 
@@ -1955,37 +1983,95 @@ MonoBehaviour:
   startInfos:
   - Coordinates: {x: 3, y: 4}
     ContentInfo: 
-    isOpen: 0
+    isOpen: 1
+    isLocked: 1
+    unlockWithAd: 1
+    unlockWithScore: 0
+    scoreToUnlock: 0
   - Coordinates: {x: 4, y: 4}
     ContentInfo: 
-    isOpen: 0
+    isOpen: 1
+    isLocked: 1
+    unlockWithAd: 1
+    unlockWithScore: 0
+    scoreToUnlock: 0
   - Coordinates: {x: 4, y: 3}
     ContentInfo: 
     isOpen: 0
+    isLocked: 0
+    unlockWithAd: 0
+    unlockWithScore: 0
+    scoreToUnlock: 0
   - Coordinates: {x: 4, y: 2}
     ContentInfo: 
     isOpen: 0
+    isLocked: 0
+    unlockWithAd: 0
+    unlockWithScore: 0
+    scoreToUnlock: 0
   - Coordinates: {x: 0, y: 0}
     ContentInfo: 
-    isOpen: 0
+    isOpen: 1
+    isLocked: 1
+    unlockWithAd: 0
+    unlockWithScore: 1
+    scoreToUnlock: 45
   - Coordinates: {x: 0, y: 1}
     ContentInfo: 
-    isOpen: 0
+    isOpen: 1
+    isLocked: 1
+    unlockWithAd: 0
+    unlockWithScore: 1
+    scoreToUnlock: 55
   - Coordinates: {x: 1, y: 1}
     ContentInfo: 
     isOpen: 0
+    isLocked: 0
+    unlockWithAd: 0
+    unlockWithScore: 0
+    scoreToUnlock: 0
   - Coordinates: {x: 1, y: 3}
     ContentInfo: 01000000010000000100000001000000
     isOpen: 1
+    isLocked: 0
+    unlockWithAd: 0
+    unlockWithScore: 0
+    scoreToUnlock: 0
   - Coordinates: {x: 3, y: 0}
     ContentInfo: 01000000010000000100000001000000
     isOpen: 1
+    isLocked: 0
+    unlockWithAd: 0
+    unlockWithScore: 0
+    scoreToUnlock: 0
   - Coordinates: {x: 3, y: 2}
     ContentInfo: 02000000020000000200000002000000
     isOpen: 1
+    isLocked: 0
+    unlockWithAd: 0
+    unlockWithScore: 0
+    scoreToUnlock: 0
   - Coordinates: {x: 2, y: 1}
     ContentInfo: 03000000030000000300000003000000
     isOpen: 1
+    isLocked: 0
+    unlockWithAd: 0
+    unlockWithScore: 0
+    scoreToUnlock: 0
+  - Coordinates: {x: 0, y: 4}
+    ContentInfo: 
+    isOpen: 1
+    isLocked: 1
+    unlockWithAd: 1
+    unlockWithScore: 0
+    scoreToUnlock: 0
+  - Coordinates: {x: 1, y: 4}
+    ContentInfo: 
+    isOpen: 1
+    isLocked: 1
+    unlockWithAd: 1
+    unlockWithScore: 0
+    scoreToUnlock: 0
   levelKey: Lvl11
 --- !u!1 &1000174481836729809
 GameObject:
@@ -2036,9 +2122,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 7320547664406935798}
   opaqueMesh: {fileID: 1063395769835507875}
   transparentMesh: {fileID: 2518088604253484982}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 0
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 1, y: 4}
   hexagons: []
   contentInfo: 
@@ -2649,9 +2742,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 6616558645155960237}
   opaqueMesh: {fileID: 2533971420847252173}
   transparentMesh: {fileID: 3918071827556377772}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 0
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 2, y: 3}
   hexagons: []
   contentInfo: 
@@ -3049,9 +3149,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 6512943716243238083}
   opaqueMesh: {fileID: 3297323566106948444}
   transparentMesh: {fileID: 3018473764492003337}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 0
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 2, y: 2}
   hexagons: []
   contentInfo: 
@@ -3753,9 +3860,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 4728433355570691211}
   opaqueMesh: {fileID: 385336640760077364}
   transparentMesh: {fileID: 436871290926044835}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 1
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 1, y: 3}
   hexagons: []
   contentInfo: 01000000010000000100000001000000
@@ -3906,9 +4020,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 6446323740357487317}
   opaqueMesh: {fileID: 3311092898250337787}
   transparentMesh: {fileID: 4588455719827106337}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 0
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 3, y: 1}
   hexagons: []
   contentInfo: 
@@ -4222,9 +4343,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 4931803040728366690}
   opaqueMesh: {fileID: 4240469513864898581}
   transparentMesh: {fileID: 728913925429977195}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 1
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 3, y: 2}
   hexagons: []
   contentInfo: 02000000020000000200000002000000
@@ -4412,9 +4540,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 6959958798309969178}
   opaqueMesh: {fileID: 158620425633636178}
   transparentMesh: {fileID: 4056163996234465151}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 0
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 0, y: 0}
   hexagons: []
   contentInfo: 
@@ -4565,9 +4700,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 7301083898085936154}
   opaqueMesh: {fileID: 2650887102432312696}
   transparentMesh: {fileID: 8073139743284635431}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 0
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 4, y: 1}
   hexagons: []
   contentInfo: 
@@ -5205,9 +5347,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 2662828657893440874}
   opaqueMesh: {fileID: 9129503350123242191}
   transparentMesh: {fileID: 7151686697171870537}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 0
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 0, y: 2}
   hexagons: []
   contentInfo: 
@@ -6463,9 +6612,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 7668335445774397677}
   opaqueMesh: {fileID: 1148653849775155727}
   transparentMesh: {fileID: 506755492723134382}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 0
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 3, y: 3}
   hexagons: []
   contentInfo: 
@@ -6761,9 +6917,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 6251986859211734687}
   opaqueMesh: {fileID: 5875761753229344089}
   transparentMesh: {fileID: 5521914845648943022}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 0
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 2, y: 0}
   hexagons: []
   contentInfo: 
@@ -6914,9 +7077,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 5296806609235558644}
   opaqueMesh: {fileID: 7219310139125392691}
   transparentMesh: {fileID: 4514859386349411390}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 1
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 2, y: 4}
   hexagons: []
   contentInfo: 03000000030000000300000003000000
@@ -7521,9 +7691,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 5554640196187734799}
   opaqueMesh: {fileID: 2079286701554675998}
   transparentMesh: {fileID: 5873661930017997456}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 0
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 4, y: 3}
   hexagons: []
   contentInfo: 
@@ -7674,9 +7851,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 2119259878081981359}
   opaqueMesh: {fileID: 2179624876550707759}
   transparentMesh: {fileID: 138769053537739738}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 0
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 4, y: 0}
   hexagons: []
   contentInfo: 
@@ -8005,9 +8189,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 2851223681911956253}
   opaqueMesh: {fileID: 2448607871183152}
   transparentMesh: {fileID: 5339220103270389225}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 0
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 4, y: 4}
   hexagons: []
   contentInfo: 
@@ -8205,9 +8396,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 3424009117196797301}
   opaqueMesh: {fileID: 3457974318814968123}
   transparentMesh: {fileID: 5411927118711908211}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 0
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 1, y: 1}
   hexagons: []
   contentInfo: 
@@ -8583,9 +8781,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 9010312092663116755}
   opaqueMesh: {fileID: 4210468050767283788}
   transparentMesh: {fileID: 3286102800267340470}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 0
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 0, y: 3}
   hexagons: []
   contentInfo: 
@@ -9103,9 +9308,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 8353699327059511812}
   opaqueMesh: {fileID: 8945323732338270255}
   transparentMesh: {fileID: 4950221388296970062}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 1
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 2, y: 1}
   hexagons: []
   contentInfo: 03000000030000000300000003000000
@@ -9386,9 +9598,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 79792754625193868}
   opaqueMesh: {fileID: 7199255161807262482}
   transparentMesh: {fileID: 4801492803073696519}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 0
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 0, y: 1}
   hexagons: []
   contentInfo: 
@@ -10106,9 +10325,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 647588993923722156}
   opaqueMesh: {fileID: 77305326603161645}
   transparentMesh: {fileID: 4862581245950959147}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 0
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 1, y: 2}
   hexagons: []
   contentInfo: 
@@ -10761,9 +10987,16 @@ MonoBehaviour:
   HexStackParent: {fileID: 5042553831601276387}
   opaqueMesh: {fileID: 1920461494005509502}
   transparentMesh: {fileID: 3714122960024275231}
+  scoreUnlock: {fileID: 0}
+  adUnlock: {fileID: 0}
+  scoreTxt: {fileID: 0}
   IsAction: 0
   isOccupied: 0
   isOpen: 0
+  isLocked: 0
+  lockedWithAd: 0
+  canClick: 0
+  scoreToUnlock: 0
   _coordinates: {x: 0, y: 4}
   hexagons: []
   contentInfo: 

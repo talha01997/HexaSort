@@ -172,7 +172,7 @@ public class GridManager : MonoSingleton<GridManager>
     {
         cellController.opaqueMesh.GetComponent<MeshRenderer>().material = lockedMaterial;
         cellController.isLocked = true;
-        
+        cellController.isOccupied = true;
         if (cellData[x, y].unlockWithAd)
         {
             cellController.lockedWithAd = cellData[x, y].unlockWithAd;
@@ -192,10 +192,11 @@ public class GridManager : MonoSingleton<GridManager>
     {
         foreach (CellController cell in scoreLockedCells.ToList())
         {
-            if (score > cell.scoreToUnlock)
+            if (score >= cell.scoreToUnlock)
             {
                 cell.scoreUnlock.SetActive(false);
                 cell.isLocked = false;
+                cell.isOccupied = false;
                 cell.opaqueMesh.GetComponent<MeshRenderer>().material = cellMat;
                 GridPlan[(int)cell.GetCoordinates().x, (int)cell.GetCoordinates().y].CellContentList = new();
                 scoreLockedCells.Remove(cell);
