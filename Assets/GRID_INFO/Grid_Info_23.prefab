@@ -1915,7 +1915,7 @@ GameObject:
   - component: {fileID: 6738420344172560886}
   - component: {fileID: 926402517731762762}
   m_Layer: 0
-  m_Name: Grid_Info_14
+  m_Name: Grid_Info_23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2072,7 +2072,7 @@ MonoBehaviour:
     unlockWithAd: 1
     unlockWithScore: 0
     scoreToUnlock: 75
-  levelKey: Lvl14
+  levelKey: Lvl23
 --- !u!1 &2548470294137733030
 GameObject:
   m_ObjectHideFlags: 0

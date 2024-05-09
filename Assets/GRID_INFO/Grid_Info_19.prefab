@@ -241,7 +241,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2242163304148306619
 Transform:
   m_ObjectHideFlags: 0
@@ -365,7 +365,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5929113471413440546
 Transform:
   m_ObjectHideFlags: 0
@@ -1858,7 +1858,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6237783420036553724
 Transform:
   m_ObjectHideFlags: 0
@@ -1915,7 +1915,7 @@ GameObject:
   - component: {fileID: 6738420344172560886}
   - component: {fileID: 926402517731762762}
   m_Layer: 0
-  m_Name: Grid_Info_14
+  m_Name: Grid_Info_19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1974,105 +1974,70 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startInfos:
+  - Coordinates: {x: 1, y: 1}
+    ContentInfo: 
+    isOpen: 1
+    isLocked: 1
+    unlockWithAd: 1
+    unlockWithScore: 0
+    scoreToUnlock: 0
+  - Coordinates: {x: 2, y: 1}
+    ContentInfo: 
+    isOpen: 1
+    isLocked: 1
+    unlockWithAd: 1
+    unlockWithScore: 0
+    scoreToUnlock: 0
+  - Coordinates: {x: 3, y: 1}
+    ContentInfo: 
+    isOpen: 1
+    isLocked: 1
+    unlockWithAd: 1
+    unlockWithScore: 0
+    scoreToUnlock: 0
   - Coordinates: {x: 2, y: 2}
     ContentInfo: 
     isOpen: 1
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 70
-  - Coordinates: {x: 0, y: 4}
+    scoreToUnlock: 100
+  - Coordinates: {x: 2, y: 3}
     ContentInfo: 
-    isOpen: 0
-    isLocked: 0
+    isOpen: 1
+    isLocked: 1
     unlockWithAd: 0
-    unlockWithScore: 0
-    scoreToUnlock: 0
+    unlockWithScore: 1
+    scoreToUnlock: 130
   - Coordinates: {x: 1, y: 3}
     ContentInfo: 
-    isOpen: 1
-    isLocked: 1
-    unlockWithAd: 0
-    unlockWithScore: 1
-    scoreToUnlock: 60
-  - Coordinates: {x: 1, y: 4}
-    ContentInfo: 
     isOpen: 0
     isLocked: 0
     unlockWithAd: 0
     unlockWithScore: 0
-    scoreToUnlock: 0
-  - Coordinates: {x: 3, y: 0}
-    ContentInfo: 
-    isOpen: 0
-    isLocked: 0
-    unlockWithAd: 0
-    unlockWithScore: 0
-    scoreToUnlock: 0
-  - Coordinates: {x: 4, y: 0}
-    ContentInfo: 
-    isOpen: 0
-    isLocked: 0
-    unlockWithAd: 0
-    unlockWithScore: 0
-    scoreToUnlock: 0
-  - Coordinates: {x: 4, y: 1}
-    ContentInfo: 
-    isOpen: 0
-    isLocked: 0
-    unlockWithAd: 0
-    unlockWithScore: 0
-    scoreToUnlock: 0
+    scoreToUnlock: 85
   - Coordinates: {x: 3, y: 3}
-    ContentInfo: 010000000100000002000000
+    ContentInfo: 
+    isOpen: 0
+    isLocked: 0
+    unlockWithAd: 0
+    unlockWithScore: 0
+    scoreToUnlock: 85
+  - Coordinates: {x: 1, y: 2}
+    ContentInfo: 0100000001000000010000000200000002000000
     isOpen: 1
     isLocked: 0
     unlockWithAd: 0
     unlockWithScore: 0
-    scoreToUnlock: 0
-  - Coordinates: {x: 1, y: 1}
-    ContentInfo: 02000000030000000300000003000000
-    isOpen: 1
-    isLocked: 0
-    unlockWithAd: 0
-    unlockWithScore: 0
-    scoreToUnlock: 0
+    scoreToUnlock: 85
   - Coordinates: {x: 3, y: 2}
-    ContentInfo: 
+    ContentInfo: 0300000003000000030000000400000004000000
     isOpen: 1
-    isLocked: 1
+    isLocked: 0
     unlockWithAd: 0
-    unlockWithScore: 1
-    scoreToUnlock: 75
-  - Coordinates: {x: 4, y: 3}
-    ContentInfo: 
-    isOpen: 1
-    isLocked: 1
-    unlockWithAd: 1
     unlockWithScore: 0
-    scoreToUnlock: 75
-  - Coordinates: {x: 4, y: 2}
-    ContentInfo: 
-    isOpen: 1
-    isLocked: 1
-    unlockWithAd: 1
-    unlockWithScore: 0
-    scoreToUnlock: 75
-  - Coordinates: {x: 0, y: 1}
-    ContentInfo: 
-    isOpen: 1
-    isLocked: 1
-    unlockWithAd: 1
-    unlockWithScore: 0
-    scoreToUnlock: 75
-  - Coordinates: {x: 0, y: 0}
-    ContentInfo: 
-    isOpen: 1
-    isLocked: 1
-    unlockWithAd: 1
-    unlockWithScore: 0
-    scoreToUnlock: 75
-  levelKey: Lvl14
+    scoreToUnlock: 85
+  levelKey: Lvl19
 --- !u!1 &2548470294137733030
 GameObject:
   m_ObjectHideFlags: 0
@@ -2378,7 +2343,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8232047802972673905
 Transform:
   m_ObjectHideFlags: 0
@@ -2896,7 +2861,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7210291860840257003
 Transform:
   m_ObjectHideFlags: 0
@@ -4285,7 +4250,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6710395263680556573
 Transform:
   m_ObjectHideFlags: 0
@@ -4669,7 +4634,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &920289934176559939
 Transform:
   m_ObjectHideFlags: 0
@@ -5850,7 +5815,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2877753090002188508
 Transform:
   m_ObjectHideFlags: 0
@@ -5912,7 +5877,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4836784507264189758
 Transform:
   m_ObjectHideFlags: 0
@@ -6136,7 +6101,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8305589764888428512
 Transform:
   m_ObjectHideFlags: 0
@@ -7235,7 +7200,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1802991642510295559
 Transform:
   m_ObjectHideFlags: 0

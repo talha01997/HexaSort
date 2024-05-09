@@ -342,6 +342,13 @@ MonoBehaviour:
   - {fileID: 926402517731762762, guid: 57f81bf3a0fee44b89add779e2e05f42, type: 3}
   - {fileID: 8603142958643532919, guid: ee6232c1df5a24fbd8039460cf168159, type: 3}
   - {fileID: 926402517731762762, guid: 78b3a4610e0a148d4b59864bead7ae69, type: 3}
+  - {fileID: 926402517731762762, guid: 750c9c9e70d524125a1e96fdfe8e6127, type: 3}
+  - {fileID: 926402517731762762, guid: c9f07fb2ebde346349e5f69b2b48694b, type: 3}
+  - {fileID: 926402517731762762, guid: 8f3d1f5e50ab2419d9f927dc839cddcf, type: 3}
+  - {fileID: 926402517731762762, guid: 70507e955f46944cd96eca136773232e, type: 3}
+  - {fileID: 926402517731762762, guid: 1e35794cb9ff74941a0ad93d70c398c4, type: 3}
+  - {fileID: 926402517731762762, guid: d31ccb51c97194516bd0e56047d40c73, type: 3}
+  - {fileID: 926402517731762762, guid: a0db5a3a6a4494dc7b050f1661e4c649, type: 3}
 --- !u!1 &882135468
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,7 +445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3111620705983290189, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: MaxTargetScore
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3111620705983290189, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: BlastObjectiveAmount
