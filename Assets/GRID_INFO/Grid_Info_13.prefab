@@ -2036,28 +2036,28 @@ MonoBehaviour:
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 65
+    scoreToUnlock: 120
   - Coordinates: {x: 3, y: 3}
     ContentInfo: 
     isOpen: 1
     isLocked: 1
     unlockWithAd: 1
     unlockWithScore: 0
-    scoreToUnlock: 65
+    scoreToUnlock: 120
   - Coordinates: {x: 3, y: 4}
     ContentInfo: 
     isOpen: 1
     isLocked: 1
     unlockWithAd: 1
     unlockWithScore: 0
-    scoreToUnlock: 65
+    scoreToUnlock: 80
   - Coordinates: {x: 0, y: 3}
     ContentInfo: 
     isOpen: 1
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 40
+    scoreToUnlock: 60
   levelKey: Lvl13
 --- !u!1 &2548470294137733030
 GameObject:

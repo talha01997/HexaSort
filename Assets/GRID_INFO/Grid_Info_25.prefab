@@ -241,7 +241,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2242163304148306619
 Transform:
   m_ObjectHideFlags: 0
@@ -303,7 +303,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8207701190182040276
 Transform:
   m_ObjectHideFlags: 0
@@ -1915,7 +1915,7 @@ GameObject:
   - component: {fileID: 6738420344172560886}
   - component: {fileID: 926402517731762762}
   m_Layer: 0
-  m_Name: Grid_Info_08
+  m_Name: Grid_Info_25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1974,6 +1974,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startInfos:
+  - Coordinates: {x: 1, y: 1}
+    ContentInfo: 
+    isOpen: 1
+    isLocked: 1
+    unlockWithAd: 0
+    unlockWithScore: 1
+    scoreToUnlock: 90
+  - Coordinates: {x: 1, y: 2}
+    ContentInfo: 
+    isOpen: 1
+    isLocked: 1
+    unlockWithAd: 0
+    unlockWithScore: 1
+    scoreToUnlock: 110
+  - Coordinates: {x: 1, y: 4}
+    ContentInfo: 
+    isOpen: 0
+    isLocked: 0
+    unlockWithAd: 0
+    unlockWithScore: 0
+    scoreToUnlock: 0
+  - Coordinates: {x: 3, y: 1}
+    ContentInfo: 
+    isOpen: 1
+    isLocked: 1
+    unlockWithAd: 1
+    unlockWithScore: 0
+    scoreToUnlock: 0
+  - Coordinates: {x: 3, y: 2}
+    ContentInfo: 
+    isOpen: 1
+    isLocked: 1
+    unlockWithAd: 1
+    unlockWithScore: 0
+    scoreToUnlock: 0
+  - Coordinates: {x: 3, y: 4}
+    ContentInfo: 
+    isOpen: 0
+    isLocked: 0
+    unlockWithAd: 0
+    unlockWithScore: 0
+    scoreToUnlock: 0
+  - Coordinates: {x: 0, y: 2}
+    ContentInfo: 010000000100000002000000
+    isOpen: 1
+    isLocked: 0
+    unlockWithAd: 0
+    unlockWithScore: 0
+    scoreToUnlock: 0
+  - Coordinates: {x: 2, y: 2}
+    ContentInfo: 030000000300000001000000
+    isOpen: 1
+    isLocked: 0
+    unlockWithAd: 0
+    unlockWithScore: 0
+    scoreToUnlock: 0
+  - Coordinates: {x: 4, y: 2}
+    ContentInfo: 020000000200000003000000
+    isOpen: 1
+    isLocked: 0
+    unlockWithAd: 0
+    unlockWithScore: 0
+    scoreToUnlock: 0
   - Coordinates: {x: 2, y: 1}
     ContentInfo: 
     isOpen: 0
@@ -1988,49 +2051,7 @@ MonoBehaviour:
     unlockWithAd: 0
     unlockWithScore: 0
     scoreToUnlock: 0
-  - Coordinates: {x: 1, y: 1}
-    ContentInfo: 010000000200000001000000
-    isOpen: 1
-    isLocked: 0
-    unlockWithAd: 0
-    unlockWithScore: 0
-    scoreToUnlock: 0
-  - Coordinates: {x: 3, y: 1}
-    ContentInfo: 02000000
-    isOpen: 1
-    isLocked: 0
-    unlockWithAd: 0
-    unlockWithScore: 0
-    scoreToUnlock: 0
-  - Coordinates: {x: 1, y: 3}
-    ContentInfo: 02000000
-    isOpen: 1
-    isLocked: 0
-    unlockWithAd: 0
-    unlockWithScore: 0
-    scoreToUnlock: 0
-  - Coordinates: {x: 3, y: 3}
-    ContentInfo: 010000000200000003000000
-    isOpen: 1
-    isLocked: 0
-    unlockWithAd: 0
-    unlockWithScore: 0
-    scoreToUnlock: 0
-  - Coordinates: {x: 4, y: 2}
-    ContentInfo: 
-    isOpen: 1
-    isLocked: 1
-    unlockWithAd: 0
-    unlockWithScore: 1
-    scoreToUnlock: 80
-  - Coordinates: {x: 0, y: 2}
-    ContentInfo: 
-    isOpen: 1
-    isLocked: 1
-    unlockWithAd: 0
-    unlockWithScore: 1
-    scoreToUnlock: 120
-  levelKey: Lvl08
+  levelKey: Lvl25
 --- !u!1 &2548470294137733030
 GameObject:
   m_ObjectHideFlags: 0
@@ -2336,7 +2357,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8232047802972673905
 Transform:
   m_ObjectHideFlags: 0
@@ -3406,7 +3427,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8720699087228248874
 Transform:
   m_ObjectHideFlags: 0
@@ -4243,7 +4264,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6710395263680556573
 Transform:
   m_ObjectHideFlags: 0
@@ -4882,7 +4903,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3600878700429738551
 Transform:
   m_ObjectHideFlags: 0
@@ -5075,7 +5096,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3993988224492805890
 Transform:
   m_ObjectHideFlags: 0
@@ -5457,7 +5478,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2959588670224770591
 Transform:
   m_ObjectHideFlags: 0
@@ -6094,7 +6115,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8305589764888428512
 Transform:
   m_ObjectHideFlags: 0
@@ -7193,7 +7214,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1802991642510295559
 Transform:
   m_ObjectHideFlags: 0
@@ -7255,7 +7276,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3453773062752884623
 Transform:
   m_ObjectHideFlags: 0

@@ -8325,7 +8325,7 @@ MonoBehaviour:
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 35
+    scoreToUnlock: 65
   - Coordinates: {x: 0, y: 3}
     ContentInfo: 01000000010000000100000002000000
     isOpen: 1
@@ -8381,7 +8381,7 @@ MonoBehaviour:
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 35
+    scoreToUnlock: 75
   - Coordinates: {x: 1, y: 1}
     ContentInfo: 
     isOpen: 1

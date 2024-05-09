@@ -1980,56 +1980,56 @@ MonoBehaviour:
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 50
+    scoreToUnlock: 80
   - Coordinates: {x: 2, y: 2}
     ContentInfo: 
     isOpen: 1
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 65
+    scoreToUnlock: 90
   - Coordinates: {x: 2, y: 4}
     ContentInfo: 
     isOpen: 1
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 80
+    scoreToUnlock: 100
   - Coordinates: {x: 0, y: 2}
     ContentInfo: 
     isOpen: 1
     isLocked: 1
     unlockWithAd: 1
     unlockWithScore: 0
-    scoreToUnlock: 80
+    scoreToUnlock: 100
   - Coordinates: {x: 4, y: 2}
     ContentInfo: 
     isOpen: 1
     isLocked: 1
     unlockWithAd: 1
     unlockWithScore: 0
-    scoreToUnlock: 80
+    scoreToUnlock: 125
   - Coordinates: {x: 1, y: 1}
     ContentInfo: 010000000100000002000000
     isOpen: 1
     isLocked: 0
     unlockWithAd: 0
     unlockWithScore: 0
-    scoreToUnlock: 80
+    scoreToUnlock: 90
   - Coordinates: {x: 1, y: 2}
     ContentInfo: 020000000200000003000000
     isOpen: 1
     isLocked: 0
     unlockWithAd: 0
     unlockWithScore: 0
-    scoreToUnlock: 80
+    scoreToUnlock: 90
   - Coordinates: {x: 3, y: 1}
     ContentInfo: 030000000300000004000000
     isOpen: 1
     isLocked: 0
     unlockWithAd: 0
     unlockWithScore: 0
-    scoreToUnlock: 80
+    scoreToUnlock: 120
   - Coordinates: {x: 3, y: 2}
     ContentInfo: 040000000400000001000000
     isOpen: 1

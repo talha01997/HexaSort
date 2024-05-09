@@ -1980,7 +1980,7 @@ MonoBehaviour:
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 70
+    scoreToUnlock: 120
   - Coordinates: {x: 0, y: 4}
     ContentInfo: 
     isOpen: 0
@@ -1994,7 +1994,7 @@ MonoBehaviour:
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 60
+    scoreToUnlock: 120
   - Coordinates: {x: 1, y: 4}
     ContentInfo: 
     isOpen: 0
@@ -2043,7 +2043,7 @@ MonoBehaviour:
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 75
+    scoreToUnlock: 140
   - Coordinates: {x: 4, y: 3}
     ContentInfo: 
     isOpen: 1

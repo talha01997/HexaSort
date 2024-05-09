@@ -5282,35 +5282,35 @@ MonoBehaviour:
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 75
+    scoreToUnlock: 100
   - Coordinates: {x: 2, y: 2}
     ContentInfo: 
     isOpen: 1
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 85
+    scoreToUnlock: 130
   - Coordinates: {x: 3, y: 2}
     ContentInfo: 
     isOpen: 1
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 95
+    scoreToUnlock: 100
   - Coordinates: {x: 2, y: 0}
     ContentInfo: 
     isOpen: 1
     isLocked: 1
     unlockWithAd: 1
     unlockWithScore: 0
-    scoreToUnlock: 95
+    scoreToUnlock: 110
   - Coordinates: {x: 2, y: 4}
     ContentInfo: 
     isOpen: 1
     isLocked: 1
     unlockWithAd: 1
     unlockWithScore: 0
-    scoreToUnlock: 95
+    scoreToUnlock: 110
   levelKey: Lvl15
 --- !u!1 &4018154486448185645
 GameObject:

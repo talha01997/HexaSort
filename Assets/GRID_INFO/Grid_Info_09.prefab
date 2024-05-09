@@ -2043,7 +2043,7 @@ MonoBehaviour:
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 50
+    scoreToUnlock: 100
   levelKey: Lvl09
 --- !u!1 &2548470294137733030
 GameObject:

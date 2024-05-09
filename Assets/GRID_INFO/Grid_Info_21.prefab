@@ -1980,21 +1980,21 @@ MonoBehaviour:
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 50
+    scoreToUnlock: 100
   - Coordinates: {x: 2, y: 2}
     ContentInfo: 
     isOpen: 1
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 65
+    scoreToUnlock: 130
   - Coordinates: {x: 2, y: 4}
     ContentInfo: 
     isOpen: 1
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 80
+    scoreToUnlock: 120
   - Coordinates: {x: 0, y: 2}
     ContentInfo: 
     isOpen: 1

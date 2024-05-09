@@ -2001,21 +2001,21 @@ MonoBehaviour:
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 40
+    scoreToUnlock: 80
   - Coordinates: {x: 3, y: 0}
     ContentInfo: 
     isOpen: 1
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 60
+    scoreToUnlock: 120
   - Coordinates: {x: 3, y: 1}
     ContentInfo: 
     isOpen: 1
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 80
+    scoreToUnlock: 130
   - Coordinates: {x: 2, y: 0}
     ContentInfo: 01000000020000000300000004000000
     isOpen: 1

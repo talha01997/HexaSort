@@ -349,6 +349,8 @@ MonoBehaviour:
   - {fileID: 926402517731762762, guid: 1e35794cb9ff74941a0ad93d70c398c4, type: 3}
   - {fileID: 926402517731762762, guid: d31ccb51c97194516bd0e56047d40c73, type: 3}
   - {fileID: 926402517731762762, guid: a0db5a3a6a4494dc7b050f1661e4c649, type: 3}
+  - {fileID: 926402517731762762, guid: 948e56916f4e141f7918074de26e61bb, type: 3}
+  - {fileID: 926402517731762762, guid: 041bba946a0344e39a0bfcccae71c390, type: 3}
 --- !u!1 &882135468
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +444,10 @@ PrefabInstance:
     - target: {fileID: 1504229972303502200, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: m_ClearFlags
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2755179657306909006, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3111620705983290189, guid: 3ed0971d5888c614fbae05154be0586c, type: 3}
       propertyPath: MaxTargetScore

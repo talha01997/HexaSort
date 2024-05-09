@@ -7672,21 +7672,21 @@ MonoBehaviour:
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 35
+    scoreToUnlock: 60
   - Coordinates: {x: 3, y: 0}
     ContentInfo: 
     isOpen: 1
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 55
+    scoreToUnlock: 80
   - Coordinates: {x: 1, y: 0}
     ContentInfo: 
     isOpen: 1
     isLocked: 1
     unlockWithAd: 0
     unlockWithScore: 1
-    scoreToUnlock: 45
+    scoreToUnlock: 60
   - Coordinates: {x: 0, y: 4}
     ContentInfo: 
     isOpen: 1
