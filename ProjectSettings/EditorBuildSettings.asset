@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Level_01.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Talha/Scenes/PokerGameplay.unity
+    guid: 19f8306d420404ec1b116f270e653a9a
   m_configObjects: {}

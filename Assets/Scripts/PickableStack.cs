@@ -13,7 +13,8 @@ public class PickableStack : MonoBehaviour
 
     [Header("Debug")]
     Vector3 _startPos;
-    Vector3 offset => new Vector3(0, .5f, 2);
+    //public Vector3 offset => new Vector3(0, .5f, 2);
+    public Vector3 offset = new Vector3(0, .5f, 2);
     Collider _collider => GetComponent<Collider>();
     [SerializeField] List<HexagonController> hexagons = new List<HexagonController>();
 
