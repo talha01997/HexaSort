@@ -41,7 +41,7 @@ public class GridManager : MonoSingleton<GridManager>
         {
             startInfos.Add(InfoManager.instance.GetCurrentInfo().startInfos[i]);
         }
-
+        CurrentGridInfo = InfoManager.instance.GetCurrentInfo();
         GenerateGrid();
     }
     public void GenerateGrid()

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,9 +20,11 @@ public class GameManager : MonoSingleton<GameManager>
     public int BlastObjectiveAmount;
     public int MaxTargetScore;
     GridManager _gridManager => GridManager.instance;
-    private void Start()
+    private IEnumerator Start()
     {
         CanvasManager.instance.ScoreUpdatedEvent += OnScoreUpdated;
+        yield return new WaitForSeconds(.5f);
+        MaxTargetScore = GridManager.instance.CurrentGridInfo.scoreToWin;
     }
 
     private void OnScoreUpdated(int score)

@@ -5311,6 +5311,7 @@ MonoBehaviour:
     unlockWithAd: 1
     unlockWithScore: 0
     scoreToUnlock: 0
+  scoreToWin: 15
   levelKey: ngVpdShMbesWaBZrh
 --- !u!1 &4018154486448185645
 GameObject:

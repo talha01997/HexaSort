@@ -7,6 +7,7 @@ using static GridManager;
 public class GridInfoAssigner : MonoBehaviour
 {
     public List<StartInfo> startInfos = new();
+    public int scoreToWin;
     public string levelKey;
     IEnumerator Start()
     {
