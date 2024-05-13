@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -71,6 +72,11 @@ public class StackSpawner : MonoSingleton<StackSpawner>
             int spawnPosIndex = i + 1; // Because when use this extension "GetComponentsInChildren" it adds this transform itself to the array too
             PickableStack cloneStack = Instantiate(stackPrefab, spawnPoints[spawnPosIndex].position, Quaternion.identity);
             stacks.Add(cloneStack.transform);
+
+            foreach (var stack in stacks)
+            {
+                stack.DOScale(1, .3f).SetEase(Ease.OutBounce);
+            }
         }
 
         SpawnHex();
