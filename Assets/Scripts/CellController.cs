@@ -20,6 +20,7 @@ public class CellController : MonoBehaviour
     public bool isLocked, lockedWithAd;
     public bool canClick;
     public int scoreToUnlock;
+    bool blastCompleted;
     [SerializeField] Vector2 _coordinates = Vector2.zero;
 
     [Header("Hexagons Related")]
@@ -79,10 +80,11 @@ public class CellController : MonoBehaviour
                 }
 
                 //Blast Rope Group
-                BlastSelectedHexList(selectedHexList);
+                StartCoroutine(BlastSelectedHexList(selectedHexList));
 
                 //Wait Blast Complete Time
-                yield return new WaitForSeconds(0.36f);
+                //yield return new WaitForSeconds(0.36f);
+                yield return new WaitUntil(() => blastCompleted);
 
                 SetOccupied(hexagons.Count > 0);
                 StartCoroutine(ControlTransfer(0));
@@ -351,13 +353,15 @@ public class CellController : MonoBehaviour
         return true;
     }
 
-    public void BlastSelectedHexList(List<HexagonController> hexList)
+    public IEnumerator BlastSelectedHexList(List<HexagonController> hexList)
     {
+        blastCompleted = false;
         for (int i = 0; i < hexList.Count; i++)
         {
             hexList[i].DestroySelf();
+            yield return new WaitForSeconds(.1f);
         }
-
+        blastCompleted = true;
         CanvasManager.instance.UpdateScoreText();
     }
     public void UpdateHexagonsList(List<HexagonController> hexes)

@@ -23,9 +23,11 @@ public class HexagonController : MonoBehaviour
     }
     public void DestroySelf()
     {
-        transform.DOScale(Vector3.zero, .25f).OnComplete(() =>
+        transform.DOScale(Vector3.zero, .2f).SetEase(Ease.InBack).OnComplete(() =>
         {
-            Destroy(gameObject);
+            Destroy(gameObject,.05f);
         });
+        //CoinsManager.Instance.AddCoins(transform.position, 1);
+        //ParticlesAnimationHandler.instance.AnimateParticles(transform.position);
     }
 }

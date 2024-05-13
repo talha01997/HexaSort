@@ -8403,6 +8403,7 @@ MonoBehaviour:
     unlockWithAd: 1
     unlockWithScore: 0
     scoreToUnlock: 0
+  scoreToWin: 150
   levelKey: VesrGYJkSmj6eBqGPP
 --- !u!1 &7179697700466477933
 GameObject:

@@ -929,6 +929,7 @@ MonoBehaviour:
     unlockWithAd: 1
     unlockWithScore: 0
     scoreToUnlock: 0
+  scoreToWin: 150
   levelKey: hKOAp1fXah3vzo56yU
 --- !u!1 &558725306353026708
 GameObject:
