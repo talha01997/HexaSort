@@ -25,7 +25,7 @@ public class HexagonController : MonoBehaviour
     {
         transform.DOScale(Vector3.zero, .2f).SetEase(Ease.InBack).OnComplete(() =>
         {
-            Destroy(gameObject,.05f);
+            Destroy(gameObject, .05f);
         });
         //CoinsManager.Instance.AddCoins(transform.position, 1);
         //ParticlesAnimationHandler.instance.AnimateParticles(transform.position);

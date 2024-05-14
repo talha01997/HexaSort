@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using DG.Tweening;
 using System.Collections.Generic;
+using System.Collections;
 //using GameAssets.GameSet.GameDevUtils.Managers;
 
 public class CoinsManager : MonoBehaviour
@@ -11,7 +12,7 @@ public class CoinsManager : MonoBehaviour
     //References
     [Header("UI references")]
     //[SerializeField]public Text coinUIText;
-    [SerializeField]public GameObject animatedCoinPrefab;
+    [SerializeField]public GameObject animatedCoinPrefab, objectInWorld;
     [SerializeField] public Transform target;
     public RectTransform canvasRect;
     public Camera mainCam;
@@ -73,8 +74,9 @@ public class CoinsManager : MonoBehaviour
         }
     }
 
-    void Animate(Vector3 collectedCoinPosition, int amount)
+    IEnumerator Animate(Vector3 collectedCoinPosition, int amount)
     {
+        //yield return new WaitForSeconds(1);
         for (int i = 0; i < amount; i++)
         {
             //check if there's coins in the pool
@@ -97,17 +99,20 @@ public class CoinsManager : MonoBehaviour
                     //executes whenever coin reach target position
                     coin.SetActive(false);
                     coinsQueue.Enqueue(coin);
+                    CanvasManager.instance.UpdateScoreText();
                     //coinUIText.text = Coins.ToString();
                     // Coins++;
                     //CurrencyManager.Instance.PlusCurrencyValue("Coins", 1);
                 });
             }
         }
+        yield return null;
     }
 
     public void AddCoins(Vector3 collectedCoinPosition, int amount)
     {
-        Animate(WordPointToCanvasPoint(Camera.main, collectedCoinPosition, canvasRect), amount);
+        print("animated");
+        StartCoroutine(Animate(WordPointToCanvasPoint(Camera.main, collectedCoinPosition, canvasRect), amount));
     }
 
     public Vector2 WordPointToCanvasPoint(Camera camera, Vector3 worldPoint, RectTransform canvasRect)
@@ -115,6 +120,12 @@ public class CoinsManager : MonoBehaviour
         Vector2 viewportPosition = camera.WorldToViewportPoint(worldPoint);
         Vector2 screenPosition = new Vector2(((viewportPosition.x * canvasRect.sizeDelta.x) - (canvasRect.sizeDelta.x * 0.5f)), ((viewportPosition.y * canvasRect.sizeDelta.y) - (canvasRect.sizeDelta.y * 0.5f)));
         return screenPosition;
+    }
+    public void AnimateStar(Vector3 position)
+    {
+        var myObj = Instantiate(objectInWorld, position, Quaternion.identity);
+        myObj.transform.DOJump(new Vector3(myObj.transform.position.x, myObj.transform.position.y + .25f, myObj.transform.position.z), 1, 1, .15f).SetEase(Ease.OutBounce);
+        Destroy(myObj, .15f);
     }
     //public void AddCoins(int amount)
     //{

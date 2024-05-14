@@ -355,14 +355,19 @@ public class CellController : MonoBehaviour
 
     public IEnumerator BlastSelectedHexList(List<HexagonController> hexList)
     {
+        var hexPosition = hexList[0].transform.position;
+        print(hexPosition);
         blastCompleted = false;
         for (int i = 0; i < hexList.Count; i++)
         {
             hexList[i].DestroySelf();
             yield return new WaitForSeconds(.1f);
         }
+        yield return new WaitForSeconds(.1f);
+        //CoinsManager.Instance.AnimateStar(hexPosition);
+        CoinsManager.Instance.AddCoins(new Vector3(hexPosition.x, hexPosition.y + .5f, hexPosition.z), 1);
         blastCompleted = true;
-        CanvasManager.instance.UpdateScoreText();
+        //CanvasManager.instance.UpdateScoreText();
     }
     public void UpdateHexagonsList(List<HexagonController> hexes)
     {
