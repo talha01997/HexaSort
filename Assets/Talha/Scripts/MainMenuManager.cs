@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] GameObject menuPanel, settingsPanel, spinPanel, storePanel;
+    [SerializeField] GameObject menuPanel, settingsPanel, spinPanel, storePanel, profilePanel;
 
     [SerializeField] List<Image> menuBtns;
     [SerializeField] Color disabledColor;
@@ -36,13 +37,24 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnClickPlay()
     {
-
+        SceneManager.LoadScene("PokerGameplay");
     }
 
     public void OnClickSettings()
     {
-
+        settingsPanel.SetActive(true);
     }
+
+    public void OnClickProfile()
+    {
+        profilePanel.SetActive(true);
+    }
+
+    public void OnClickSpin()
+    {
+        spinPanel.SetActive(true);
+    }
+
     void DisableMenuBtns()
     {
         foreach (var button in menuBtns)
