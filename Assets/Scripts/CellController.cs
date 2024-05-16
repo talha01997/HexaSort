@@ -125,22 +125,71 @@ public class CellController : MonoBehaviour
                 if (SelectedNeighbours.Count > 0)
                 {
                     //Set Selected Neighbours To First Finded
-                    SelectedNeighbour = SelectedNeighbours[0];
-
-                    //Check Selected Neighbours Pure Status
-                    for (int i = 0; i < SelectedNeighbours.Count; i++)
+                    //print(SelectedNeighbour + " default selected");
+                    if(SelectedNeighbours.Count == 1)
                     {
-                        if (GridManager.instance.GridPlan[(int)SelectedNeighbours[i].x, (int)SelectedNeighbours[i].y].CellObject.GetComponent<CellController>().IsPure() && !IsPure())
+                        SelectedNeighbour = SelectedNeighbours[0];
+                        //Check Selected Neighbours Pure Status
+                        for (int i = 0; i < SelectedNeighbours.Count; i++)
                         {
-                            SendOrTake = GridManager.TransferType.Take;
-                            SelectedNeighbour = SelectedNeighbours[i];
-                            break;
+                            print("count 1");
+                            if (GridManager.instance.GridPlan[(int)SelectedNeighbours[i].x, (int)SelectedNeighbours[i].y].CellObject.GetComponent<CellController>().IsPure() && !IsPure())
+                            {
+                                SendOrTake = GridManager.TransferType.Send;
+                                SelectedNeighbour = SelectedNeighbours[i];
+                                break;
+                            }
+                            else if (GridManager.instance.GridPlan[(int)SelectedNeighbours[i].x, (int)SelectedNeighbours[i].y].CellObject.GetComponent<CellController>().IsPure() == false && !IsPure())
+                            {
+                                SendOrTake = GridManager.TransferType.Send;
+                                SelectedNeighbour = SelectedNeighbours[i];
+                                break;
+                            }
+                            else if (GridManager.instance.GridPlan[(int)SelectedNeighbours[i].x, (int)SelectedNeighbours[i].y].CellObject.GetComponent<CellController>().IsPure() == false && IsPure())
+                            {
+                                SendOrTake = GridManager.TransferType.Take;
+                                SelectedNeighbour = SelectedNeighbours[i];
+                                break;
+                            }
                         }
-                        else if (GridManager.instance.GridPlan[(int)SelectedNeighbours[i].x, (int)SelectedNeighbours[i].y].CellObject.GetComponent<CellController>().IsPure()==false && IsPure())
+                    }
+                    else if (SelectedNeighbours.Count > 1)
+                    {
+                        foreach (var neighbour in SelectedNeighbours)
                         {
-                            SendOrTake = GridManager.TransferType.Take;
-                            SelectedNeighbour = SelectedNeighbours[i];
-                            break;
+                            if (GridManager.instance.GridPlan[(int)neighbour.x, (int)neighbour.y].CellObject.GetComponent<CellController>().IsPure() == false)
+                            {
+                                SelectedNeighbour = neighbour;
+                                break;
+                            }
+                            else
+                            {
+                                SelectedNeighbour = SelectedNeighbours[0];
+                            }
+                        }
+                        //SelectedNeighbour = SelectedNeighbours[0];
+                        //Check Selected Neighbours Pure Status
+                        for (int i = 0; i < SelectedNeighbours.Count; i++)
+                        {
+                            print("count more than one");
+                            if (GridManager.instance.GridPlan[(int)SelectedNeighbours[i].x, (int)SelectedNeighbours[i].y].CellObject.GetComponent<CellController>().IsPure()==false && (!IsPure() || IsPure()))
+                            {
+                                SendOrTake = GridManager.TransferType.Take;
+                                SelectedNeighbour = SelectedNeighbours[i];
+                                break;
+                            }
+                            else if (GridManager.instance.GridPlan[(int)SelectedNeighbours[i].x, (int)SelectedNeighbours[i].y].CellObject.GetComponent<CellController>().IsPure() && IsPure())
+                            {
+                                SendOrTake = GridManager.TransferType.Take;
+                                SelectedNeighbour = SelectedNeighbours[i];
+                                break;
+                            }
+                            //else if (GridManager.instance.GridPlan[(int)SelectedNeighbours[i].x, (int)SelectedNeighbours[i].y].CellObject.GetComponent<CellController>().IsPure() == false && IsPure())
+                            //{
+                            //    SendOrTake = GridManager.TransferType.Take;
+                            //    SelectedNeighbour = SelectedNeighbours[i];
+                            //    break;
+                            //}
                         }
                     }
 
