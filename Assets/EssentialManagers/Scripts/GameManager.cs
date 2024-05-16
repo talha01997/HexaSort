@@ -19,6 +19,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     public int BlastObjectiveAmount;
     public int MaxTargetScore;
+    public int lives;
     GridManager _gridManager => GridManager.instance;
     private IEnumerator Start()
     {
@@ -63,11 +64,16 @@ public class GameManager : MonoSingleton<GameManager>
         }
         else
         {
+            //StartCoroutine(CheckIfResumed());
             LevelFailedEvent?.Invoke();
 
         }
     }
+    public IEnumerator CheckIfResumed()
+    {
 
+        yield return null;
+    }
     public void NextStage()
     {
         PlayerPrefs.SetInt(cumulativeStagePlayedKey, PlayerPrefs.GetInt(cumulativeStagePlayedKey, 1) + 1);

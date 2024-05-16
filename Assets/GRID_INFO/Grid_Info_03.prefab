@@ -2079,7 +2079,7 @@ MonoBehaviour:
     unlockWithAd: 1
     unlockWithScore: 0
     scoreToUnlock: 0
-  scoreToWin: 150
+  scoreToWin: 180
   levelKey: bYc2P0KjSgGSJzn9
 --- !u!1 &1000174481836729809
 GameObject:

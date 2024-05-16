@@ -2072,7 +2072,7 @@ MonoBehaviour:
     unlockWithAd: 1
     unlockWithScore: 0
     scoreToUnlock: 95
-  scoreToWin: 150
+  scoreToWin: 280
   levelKey: Lvl14
 --- !u!1 &2548470294137733030
 GameObject:
