@@ -368,11 +368,15 @@ public class CellController : MonoBehaviour
             //If Cell Open And Have a Hexagon
             if (ControlNeighbourGrid.isOpen && ControlNeighbourGrid.CellContentList.Count > 0)
             {
+                //foreach (var neighbourCell in ControlNeighbourGridPart.hexagons)
+                //{
+                //    //if(MyTopRopeColor)
+                //}
                 //If Hexagon Colors Matched
                 if (MyTopRopeColor == ControlNeighbourGridPart.hexagons[ControlNeighbourGridPart.hexagons.Count - 1].GetTexture())
                 {
                     //SelectedNeighbours.Add(new Vector2(NeighbourPosX, NeighbourPosY));
-                    //canBlast = false;
+                    canBlast = false;
                     return false;
                     //StartCoroutine(ControlTransfer(0));
                 }
@@ -383,7 +387,7 @@ public class CellController : MonoBehaviour
             if (hexagons.Count >= GameManager.instance.BlastObjectiveAmount)
             {
                 performBlast = true;
-                //canBlast = true;
+                canBlast = true;
             }
 
         }
@@ -405,10 +409,10 @@ public class CellController : MonoBehaviour
 
             if (matchCount >= GameManager.instance.BlastObjectiveAmount)
             {
-                //canBlast = true;
+                canBlast = true;
                 return true;
             }
-            //canBlast = false;
+            canBlast = false;
             return false;
         }
 
