@@ -20,7 +20,7 @@ public class CellController : MonoBehaviour
     public bool isLocked, lockedWithAd;
     public bool canClick;
     public int scoreToUnlock;
-    bool blastCompleted;
+    bool blastCompleted, canBlast;
     [SerializeField] Vector2 _coordinates = Vector2.zero;
 
     [Header("Hexagons Related")]
@@ -52,7 +52,7 @@ public class CellController : MonoBehaviour
             yield return new WaitForSeconds(StartControlDelay);
 
             //If There is opportunity to Blast
-            if (IsThereBlast())
+            if (IsThereBlast() && canBlast)
             {
                 //Create Blast Hex List
                 List<HexagonController> selectedHexList = new List<HexagonController>();
@@ -264,10 +264,9 @@ public class CellController : MonoBehaviour
 
                             SelectedGridPart.hexagons.Add(WillSendRopeList[i]);
                             hexagons.RemoveAt(hexagons.Count - 1);
-
                             yield return new WaitForSeconds(0.06f);
                         }
-
+                        
                         //If There Is No Hex In This Cell Set Occupation Status
                         SetOccupied(hexagons.Count > 0);
                     }
@@ -306,10 +305,8 @@ public class CellController : MonoBehaviour
 
                             hexagons.Add(WillTakeRopeList[i]);
                             SelectedGridPart.hexagons.RemoveAt(SelectedGridPart.hexagons.Count - 1);
-
                             yield return new WaitForSeconds(0.06f);
                         }
-
                         SetOccupied(hexagons.Count > 0);
                     }
 
@@ -356,10 +353,38 @@ public class CellController : MonoBehaviour
     public bool IsThereBlast()
     {
         bool performBlast = false;
+
+        TextureInfo.TextureEnum MyTopRopeColor = hexagons[hexagons.Count - 1].GetTexture();
+        List<Vector2> NeighboursCoordinateList = GridManager.instance.GetNeighboursCoordinates(GetCoordinates());
+
+        //Control All Finded Neighbours Cells
+        for (int i = 0; i < NeighboursCoordinateList.Count; i++)
+        {
+            int NeighbourPosX = (int)NeighboursCoordinateList[i].x;
+            int NeighbourPosY = (int)NeighboursCoordinateList[i].y;
+            CellData ControlNeighbourGrid = GridManager.instance.GridPlan[NeighbourPosX, NeighbourPosY];
+            CellController ControlNeighbourGridPart = GridManager.instance.GridPlan[NeighbourPosX, NeighbourPosY].CellObject.GetComponent<CellController>();
+
+            //If Cell Open And Have a Hexagon
+            if (ControlNeighbourGrid.isOpen && ControlNeighbourGrid.CellContentList.Count > 0)
+            {
+                //If Hexagon Colors Matched
+                if (MyTopRopeColor == ControlNeighbourGridPart.hexagons[ControlNeighbourGridPart.hexagons.Count - 1].GetTexture())
+                {
+                    //SelectedNeighbours.Add(new Vector2(NeighbourPosX, NeighbourPosY));
+                    //canBlast = false;
+                    return false;
+                    //StartCoroutine(ControlTransfer(0));
+                }
+            }
+        }
         if (IsPure())
         {
             if (hexagons.Count >= GameManager.instance.BlastObjectiveAmount)
+            {
                 performBlast = true;
+                //canBlast = true;
+            }
 
         }
         if (hexagons.Count > 1)
@@ -380,9 +405,10 @@ public class CellController : MonoBehaviour
 
             if (matchCount >= GameManager.instance.BlastObjectiveAmount)
             {
+                //canBlast = true;
                 return true;
             }
-
+            //canBlast = false;
             return false;
         }
 
