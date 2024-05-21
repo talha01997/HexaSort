@@ -86,10 +86,12 @@ public class StackSpawner : MonoSingleton<StackSpawner>
         for (int s = 0; s < stacks.Count; s++)
         {
             int randomHexCount = GetRandomAmount(1, 5);
+            List<int> sequenceList = UniqueSequenceGenerator.instance.GenerateUniqueSequence(1, maxColorVarierty + 1, randomHexCount);
 
             for (int i = 0; i < randomHexCount; i++)
             {
-                TextureInfo.TextureEnum texture = GetRandomTexture(randomHexCount, i);
+                //TextureInfo.TextureEnum texture = GetRandomTexture(randomHexCount, i);
+                TextureInfo.TextureEnum texture = (TextureInfo.TextureEnum)sequenceList[i];
                 //Material mat = new Material(GridManager.instance.BlockMaterial);
                 Material mat = new(GridManager.instance.BlockMaterial);
                 //mat.color = GridManager.instance.texturePack.HexagonTextureInfo[GridManager.instance.texturePack.GetTextureEnumIndex(color)].HexColor;
