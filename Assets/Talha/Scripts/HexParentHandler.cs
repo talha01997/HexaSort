@@ -4,16 +4,16 @@ using UnityEngine.EventSystems;
 public class HexParentHandler : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] Vector3 startPos, mouseOffset;
-    [SerializeField] bool isPicked;
+    public bool isPicked;
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        isPicked = true;
+        //isPicked = true;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        isPicked = false;
+        //isPicked = false;
     }
 
     private void OnEnable()

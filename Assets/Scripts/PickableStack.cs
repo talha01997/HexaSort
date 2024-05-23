@@ -25,7 +25,7 @@ public class PickableStack : MonoBehaviour
 
     IEnumerator Start()
     {
-        GameManager.instance.LevelEndedEvent += DestroySelf;
+        //GameManager.instance.LevelEndedEvent += DestroySelf;
 
         yield return null;
 

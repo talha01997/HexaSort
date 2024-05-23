@@ -55,6 +55,13 @@ public class InputManager : MonoSingleton<InputManager>
                     blockPicking = true;
                     isDragging = true;
                 }
+                if (hit.collider.TryGetComponent(out HexParentHandler hexParent))
+                {
+                    if (blockPicking) return;
+                    if (hexParent.isPicked) return;
+
+                    blockPicking = true;
+                }
             }
         }
         else if (Input.GetMouseButtonUp(0))
