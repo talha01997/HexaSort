@@ -27,6 +27,11 @@ public class StackSpawner : MonoSingleton<StackSpawner>
         base.Awake();
         maxColorVarierty = 3;
         spawnPoints = GetComponentsInChildren<Transform>();
+
+        //for (int i = 0; i < transform.childCount; i++)
+        //{
+        //    spawnPoints.Add(transform.GetChild(i));
+        //}
     }
 
     private void Start()
@@ -65,6 +70,7 @@ public class StackSpawner : MonoSingleton<StackSpawner>
     {
         return stacks.Count == 0;
     }
+    [ContextMenu("SpawnStacks")]
     void SpawnStacks()
     {
         for (int i = 0; i < _count; i++)
@@ -104,6 +110,17 @@ public class StackSpawner : MonoSingleton<StackSpawner>
                 hex.Initialize(texture, mat);
             }
         }
+    }
+
+    public void RespawnStack()
+    {
+        foreach (var item in stacks)
+        {
+            Destroy(item.gameObject);
+        }
+        stacks.Clear();
+
+        SpawnStacks();
     }
 
     #region GETTERS

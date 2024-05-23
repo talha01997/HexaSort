@@ -18,7 +18,7 @@ public class CellController : MonoBehaviour
     public bool isOccupied;
     public bool isOpen = true;
     public bool isLocked, lockedWithAd;
-    public bool canClick;
+    public bool canClick, canHammer;
     public int scoreToUnlock;
     bool blastCompleted, canBlast;
     [SerializeField] Vector2 _coordinates = Vector2.zero;
@@ -26,6 +26,18 @@ public class CellController : MonoBehaviour
     [Header("Hexagons Related")]
     [SerializeField] List<HexagonController> hexagons = new List<HexagonController>();
     public List<TextureInfo.TextureEnum> contentInfo;
+
+    private void OnEnable()
+    {
+        UiManager.instance.HammerOn += () => canHammer = true;
+        UiManager.instance.HammerOff += () => canHammer = false;
+    }
+    private void OnDisable()
+    {
+        UiManager.instance.HammerOn -= () => canHammer = true;
+        UiManager.instance.HammerOff -= () => canHammer = false;
+    }
+
     public void Starter()
     {
         SetHexagonLists();
@@ -42,8 +54,56 @@ public class CellController : MonoBehaviour
             opaqueMesh.GetComponent<MeshRenderer>().material = GridManager.instance.cellMat;
             Destroy(GetComponent<BoxCollider>());
         }
-    }
+        if (canHammer && hexagons.Count>0)
+        {
+            //print("test");
+            //bool testBool = IsThereBlast();
+            //StartCoroutine(BlastSelectedHexList(hexagons));
+            
 
+            ////SetOccupied(hexagons.Count > 0);
+            //Invoke(nameof(ClearList), 1);
+            //isOccupied = false;
+            //UiManager.instance.DeActivateHammer();
+            HammerSelectedCell();
+        }
+    }
+    void ClearList()
+    {
+        hexagons.Clear();
+    }
+    void HammerSelectedCell()
+    {
+        print("hammered");
+        List<HexagonController> selectedHexList = new List<HexagonController>();
+        selectedHexList.Add(hexagons[hexagons.Count - 1]);
+
+        for (int i = hexagons.Count - 2; i >= 0; i--)
+        {
+            selectedHexList.Add(hexagons[i]);
+        }
+
+        //Update GridPlan and CellData
+        for (int i = 0; i < selectedHexList.Count; i++)
+        {
+            hexagons.RemoveAt(hexagons.Count - 1);
+            CellData ThisGridClass = GridManager.instance.GridPlan[(int)GetCoordinates().x, (int)GetCoordinates().y];
+            ThisGridClass.CellContentList.RemoveAt(ThisGridClass.CellContentList.Count - 1);
+        }
+
+        foreach (var hex in selectedHexList)
+        {
+            hex.transform.DOScale(.1f, .25f).OnComplete(() =>
+            {
+                hex.DestroySelf();
+                isOccupied = false;
+                UiManager.instance.DeActivateHammer();
+            });
+        }
+        hexagons.Clear();
+        //SetHexagonLists();
+        //IsAction = false;
+    }
     public IEnumerator ControlTransfer(float StartControlDelay)
     {
         //If There is Any Hex
@@ -354,34 +414,7 @@ public class CellController : MonoBehaviour
     {
         bool performBlast = false;
 
-        TextureInfo.TextureEnum MyTopRopeColor = hexagons[hexagons.Count - 1].GetTexture();
-        List<Vector2> NeighboursCoordinateList = GridManager.instance.GetNeighboursCoordinates(GetCoordinates());
-
-        //Control All Finded Neighbours Cells
-        for (int i = 0; i < NeighboursCoordinateList.Count; i++)
-        {
-            int NeighbourPosX = (int)NeighboursCoordinateList[i].x;
-            int NeighbourPosY = (int)NeighboursCoordinateList[i].y;
-            CellData ControlNeighbourGrid = GridManager.instance.GridPlan[NeighbourPosX, NeighbourPosY];
-            CellController ControlNeighbourGridPart = GridManager.instance.GridPlan[NeighbourPosX, NeighbourPosY].CellObject.GetComponent<CellController>();
-
-            //If Cell Open And Have a Hexagon
-            if (ControlNeighbourGrid.isOpen && ControlNeighbourGrid.CellContentList.Count > 0)
-            {
-                //foreach (var neighbourCell in ControlNeighbourGridPart.hexagons)
-                //{
-                //    //if(MyTopRopeColor)
-                //}
-                //If Hexagon Colors Matched
-                if (MyTopRopeColor == ControlNeighbourGridPart.hexagons[ControlNeighbourGridPart.hexagons.Count - 1].GetTexture())
-                {
-                    //SelectedNeighbours.Add(new Vector2(NeighbourPosX, NeighbourPosY));
-                    canBlast = false;
-                    return false;
-                    //StartCoroutine(ControlTransfer(0));
-                }
-            }
-        }
+        
         if (IsPure())
         {
             if (hexagons.Count >= GameManager.instance.BlastObjectiveAmount)
@@ -391,6 +424,38 @@ public class CellController : MonoBehaviour
             }
 
         }
+        if (!IsPure())
+        {
+            TextureInfo.TextureEnum MyTopRopeColor = hexagons[hexagons.Count - 1].GetTexture();
+            List<Vector2> NeighboursCoordinateList = GridManager.instance.GetNeighboursCoordinates(GetCoordinates());
+
+            //Control All Finded Neighbours Cells
+            for (int i = 0; i < NeighboursCoordinateList.Count; i++)
+            {
+                int NeighbourPosX = (int)NeighboursCoordinateList[i].x;
+                int NeighbourPosY = (int)NeighboursCoordinateList[i].y;
+                CellData ControlNeighbourGrid = GridManager.instance.GridPlan[NeighbourPosX, NeighbourPosY];
+                CellController ControlNeighbourGridPart = GridManager.instance.GridPlan[NeighbourPosX, NeighbourPosY].CellObject.GetComponent<CellController>();
+
+                //If Cell Open And Have a Hexagon
+                if (ControlNeighbourGrid.isOpen && ControlNeighbourGrid.CellContentList.Count > 0)
+                {
+                    //foreach (var neighbourCell in ControlNeighbourGridPart.hexagons)
+                    //{
+                    //    //if(MyTopRopeColor)
+                    //}
+                    //If Hexagon Colors Matched
+                    if (MyTopRopeColor == ControlNeighbourGridPart.hexagons[ControlNeighbourGridPart.hexagons.Count - 1].GetTexture())
+                    {
+                        //SelectedNeighbours.Add(new Vector2(NeighbourPosX, NeighbourPosY));
+                        canBlast = false;
+                        return false;
+                        //StartCoroutine(ControlTransfer(0));
+                    }
+                }
+            }
+        }
+        
         if (hexagons.Count > 1)
         {
             int matchCount = 0;

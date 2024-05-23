@@ -4,19 +4,36 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
+using System;
+using Unity.VisualScripting;
 
 public class UiManager : MonoBehaviour
 {
     public static UiManager instance;
+    [SerializeField] Button hammerBtn, respawnBtn;
     [SerializeField] Transform sliderParent;
     [SerializeField] Slider lvlBarSlider;
     [SerializeField] TextMeshProUGUI scoreTxt;
     [SerializeField] int currentScore, totalScore;
 
+    public event Action HammerOn, HammerOff;
+
     private void Awake()
     {
         if (!instance)
             instance = this;
+    }
+
+    private void OnEnable()
+    {
+        respawnBtn.onClick.AddListener(StackSpawner.instance.RespawnStack);
+        hammerBtn.onClick.AddListener(ActivateHammer);
+    }
+
+    private void OnDisable()
+    {
+        respawnBtn.onClick.RemoveListener(StackSpawner.instance.RespawnStack);
+        hammerBtn.onClick.RemoveListener(ActivateHammer);
     }
     // Start is called before the first frame update
     IEnumerator Start()
@@ -38,5 +55,15 @@ public class UiManager : MonoBehaviour
 
         GridManager.instance.CheckLockedCells(currentScore);
 
+    }
+
+    void ActivateHammer()
+    {
+        HammerOn?.Invoke();
+    }
+
+    public void DeActivateHammer()
+    {
+        HammerOff?.Invoke();
     }
 }

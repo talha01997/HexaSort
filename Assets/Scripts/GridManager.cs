@@ -177,7 +177,7 @@ public class GridManager : MonoSingleton<GridManager>
         {
             cellController.lockedWithAd = cellData[x, y].unlockWithAd;
             cellController.adUnlock.SetActive(true);
-            cellController.AddComponent<BoxCollider>();
+            //cellController.AddComponent<BoxCollider>();
         }
         else if (cellData[x, y].unlockWithScore)
         {
