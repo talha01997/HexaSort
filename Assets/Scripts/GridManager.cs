@@ -29,7 +29,7 @@ public class GridManager : MonoSingleton<GridManager>
     public float VERTICAL_PLACEMENT_OFFSET = 0.2f;
     [SerializeField] List<StartInfo> startInfos = new List<StartInfo>();
     public List<CellController> scoreLockedCells, adLockedCells;
-
+    public List<CellController> cells;
     [Space(125)]
     public GridInfoAssigner CurrentGridInfo;
 
@@ -43,6 +43,11 @@ public class GridManager : MonoSingleton<GridManager>
         }
         CurrentGridInfo = InfoManager.instance.GetCurrentInfo();
         GenerateGrid();
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            cells.Add(transform.GetChild(i).GetComponent<CellController>());
+        }
     }
     public void GenerateGrid()
     {

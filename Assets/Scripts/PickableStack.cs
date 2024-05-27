@@ -3,6 +3,7 @@ using DG.Tweening;
 using System.Collections.Generic;
 using System.Collections;
 using Unity.VisualScripting;
+using static UnityEditor.Progress;
 
 public class PickableStack : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class PickableStack : MonoBehaviour
     Collider _collider => GetComponent<Collider>();
     [SerializeField] List<HexagonController> hexagons = new List<HexagonController>();
 
+    [SerializeField] Color unSelectedColor, selectedColor;
+    [SerializeField] bool isVibrating;
     private void Awake()
     {
         _startPos = transform.position;
@@ -107,12 +110,34 @@ public class PickableStack : MonoBehaviour
         {
             if (hit.collider.transform.parent.parent.TryGetComponent(out CellController cell))
             {
-                if (cell.isOccupied || cell.isLocked) return null;
-                return cell;
+                VibrateOnce();
+                foreach (var item in GridManager.instance.cells)
+                {
+                    if (!item.isLocked)
+                        item.opaqueMesh.GetComponent<MeshRenderer>().material.DOColor(unSelectedColor, .2f);
+                }
+                if (!cell.isLocked)
+                {
+                    cell.opaqueMesh.GetComponent<MeshRenderer>().material.DOColor(selectedColor, .2f);
+                    return cell;
+                }
+            }
+            else
+            {
+                isVibrating = false;
             }
         }
 
         return null;
+    }
+
+    void VibrateOnce()
+    {
+        if (!isVibrating)
+        {
+            isVibrating = true;
+            Vibration.VibratePop();
+        }
     }
     public void GetPicked()
     {

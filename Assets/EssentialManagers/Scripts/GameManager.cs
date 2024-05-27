@@ -23,6 +23,7 @@ public class GameManager : MonoSingleton<GameManager>
     GridManager _gridManager => GridManager.instance;
     private IEnumerator Start()
     {
+        Vibration.Init();
         CanvasManager.instance.ScoreUpdatedEvent += OnScoreUpdated;
         yield return new WaitForSeconds(.5f);
         MaxTargetScore = GridManager.instance.CurrentGridInfo.scoreToWin;
