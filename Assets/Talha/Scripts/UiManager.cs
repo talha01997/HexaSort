@@ -26,14 +26,14 @@ public class UiManager : MonoBehaviour
 
     private void OnEnable()
     {
-        respawnBtn.onClick.AddListener(StackSpawner.instance.RespawnStack);
-        hammerBtn.onClick.AddListener(ActivateHammer);
+        //respawnBtn.onClick.AddListener(StackSpawner.instance.RespawnStack);
+        //hammerBtn.onClick.AddListener(ActivateHammer);
     }
 
     private void OnDisable()
     {
-        respawnBtn.onClick.RemoveListener(StackSpawner.instance.RespawnStack);
-        hammerBtn.onClick.RemoveListener(ActivateHammer);
+        //respawnBtn.onClick.RemoveListener(StackSpawner.instance.RespawnStack);
+        //hammerBtn.onClick.RemoveListener(ActivateHammer);
     }
     // Start is called before the first frame update
     IEnumerator Start()
@@ -57,7 +57,7 @@ public class UiManager : MonoBehaviour
 
     }
 
-    void ActivateHammer()
+    public void ActivateHammer()
     {
         HammerOn?.Invoke();
     }

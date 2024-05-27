@@ -54,8 +54,8 @@ public class CoinsManager : MonoBehaviour
         {
             Instance = this;
         }
-        targetPosition = target.position;
-       // Coins = PlayerPrefs.GetInt("Coin");
+        targetPosition = target.position - new Vector3(0, 100, 0);
+        // Coins = PlayerPrefs.GetInt("Coin");
         //	_c              = CurrencyManager.Instance.TotalCurrencyFor("Coins");
         //  coinUIText.text = Coins.ToString();
         //prepare pool

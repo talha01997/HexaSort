@@ -2,9 +2,6 @@ using UnityEngine;
 using DG.Tweening;
 using System.Collections.Generic;
 using System.Collections;
-using Unity.VisualScripting;
-using static UnityEditor.Progress;
-
 public class PickableStack : MonoBehaviour
 {
     [Header("Configuration")]
@@ -122,12 +119,17 @@ public class PickableStack : MonoBehaviour
                     return cell;
                 }
             }
-            else
+            
+        }
+        else
+        {
+            isVibrating = false;
+            foreach (var item in GridManager.instance.cells)
             {
-                isVibrating = false;
+                if (!item.isLocked)
+                    item.opaqueMesh.GetComponent<MeshRenderer>().material.DOColor(unSelectedColor, .2f);
             }
         }
-
         return null;
     }
 
