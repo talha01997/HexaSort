@@ -58,7 +58,7 @@ public class PickableStack : MonoBehaviour
         if (!gameObject.activeInHierarchy) return;
         if (!IsPicked) return;
 
-        FollowMousePos();
+        //FollowMousePos();
         GetCellBelow();
     }
     private void FollowMousePos()
@@ -113,10 +113,14 @@ public class PickableStack : MonoBehaviour
                     if (!item.isLocked)
                         item.opaqueMesh.GetComponent<MeshRenderer>().material.DOColor(unSelectedColor, .2f);
                 }
-                if (!cell.isLocked)
+                if (!cell.isLocked && !cell.isOccupied)
                 {
                     cell.opaqueMesh.GetComponent<MeshRenderer>().material.DOColor(selectedColor, .2f);
                     return cell;
+                }
+                else
+                {
+                    return null;
                 }
             }
             

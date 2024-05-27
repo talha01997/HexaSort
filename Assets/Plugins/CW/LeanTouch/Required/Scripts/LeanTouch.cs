@@ -148,7 +148,7 @@ namespace Lean.Touch
 
 		/// <summary>Should any mouse button press be stored as a finger?
 		/// NOTE: It will be given a finger <b>Index</b> of MOUSE_FINGER_INDEX = -1.</summary>
-		public bool UseMouse { set { useMouse = value; } get { return useMouse; } } [SerializeField] private bool useMouse = true;
+		public bool UseMouse; [SerializeField] private bool useMouse = true;
 
 		/// <summary>Should components hooked into the <b>OnSimulateFingers</b> event be used? (e.g. LeanTouchSimulator)</summary>
 		public bool UseSimulator { set { useSimulator = value; } get { return useSimulator; } } [SerializeField] private bool useSimulator = true;
