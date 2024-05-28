@@ -17,6 +17,7 @@ public class GameManager : MonoSingleton<GameManager>
     public event System.Action LevelFailedEvent; // fired only on fail
     public event System.Action LevelAboutToChangeEvent; // fired just before next level load
 
+    public Transform hammer;
     public int BlastObjectiveAmount;
     public int MaxTargetScore;
     public int lives;

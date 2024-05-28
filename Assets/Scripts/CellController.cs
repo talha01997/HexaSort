@@ -22,20 +22,20 @@ public class CellController : MonoBehaviour
     public int scoreToUnlock;
     bool blastCompleted, canBlast;
     [SerializeField] Vector2 _coordinates = Vector2.zero;
-
+    [SerializeField] Vector3 hammerOffset;
     [Header("Hexagons Related")]
     [SerializeField] List<HexagonController> hexagons = new List<HexagonController>();
     public List<TextureInfo.TextureEnum> contentInfo;
 
     private void OnEnable()
     {
-        UiManager.instance.HammerOn += () => canHammer = true;
-        UiManager.instance.HammerOff += () => canHammer = false;
+        UiManager.instance.HammerOn += HammerOn;
+        UiManager.instance.HammerOff += HammerOff;
     }
     private void OnDisable()
     {
-        UiManager.instance.HammerOn -= () => canHammer = true;
-        UiManager.instance.HammerOff -= () => canHammer = false;
+        UiManager.instance.HammerOn -= HammerOn;
+        UiManager.instance.HammerOff -= HammerOff;
     }
 
     public void Starter()
@@ -56,16 +56,21 @@ public class CellController : MonoBehaviour
         }
         if (canHammer && hexagons.Count>0)
         {
-            //print("test");
-            //bool testBool = IsThereBlast();
-            //StartCoroutine(BlastSelectedHexList(hexagons));
-            
-
-            ////SetOccupied(hexagons.Count > 0);
-            //Invoke(nameof(ClearList), 1);
-            //isOccupied = false;
-            //UiManager.instance.DeActivateHammer();
-            HammerSelectedCell();
+            GameManager.instance.hammer.DOMove(transform.position+hammerOffset, .1f).SetEase(Ease.OutBack).OnComplete(() =>
+            {
+                GameManager.instance.hammer.gameObject.SetActive(true);
+                GameManager.instance.hammer.DOScale(1, .35f).SetDelay(.15f);
+                GameManager.instance.hammer.DORotate(new Vector3(0, 90, 80), 1).SetDelay(.45f).SetEase(Ease.OutBounce).OnComplete(() =>
+                {
+                    GameManager.instance.hammer.DOScale(.1f, .35f).OnComplete(() =>
+                    {
+                        GameManager.instance.hammer.DORotate(new Vector3(0, 90, -20), .1f);
+                        GameManager.instance.hammer.gameObject.SetActive(false);
+                        HammerSelectedCell();
+                    });
+                    
+                });
+            });
         }
     }
     void ClearList()
@@ -408,6 +413,24 @@ public class CellController : MonoBehaviour
         for (int i = 0; i < scoreUnlock.transform.childCount; i++)
         {
             scoreUnlock.transform.GetChild(i).LookAt(Camera.main.transform);
+        }
+    }
+
+    void HammerOn()
+    {
+        canHammer = true;
+        if (hexagons.Count > 0)
+        {
+            HexStackParent.DOShakeRotation(.35f, new Vector3(0, 15, 0), 5, 90, true).SetLoops(-1, LoopType.Yoyo).SetId("CellShake");
+        }
+    }
+    void HammerOff()
+    {
+        canHammer = false;
+        if (hexagons.Count > 0)
+        {
+            DOTween.Kill("CellShake");
+            //HexStackParent.DOShakeRotation(.35f, new Vector3(0, 15, 0), 5, 90, true).SetLoops(-1, LoopType.Yoyo).SetId("CellShake");
         }
     }
     public bool IsThereBlast()
