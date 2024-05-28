@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using DG.Tweening;
@@ -10,7 +11,7 @@ public class StackSpawner : MonoSingleton<StackSpawner>
     [Header("References")]
     [SerializeField] PickableStack stackPrefab;
     [SerializeField] HexagonController hexagonPrefab;
-
+    [SerializeField] Transform spawnPoint;
     [Header("References")]
     [SerializeField] List<int> scoreTresholds;
 
@@ -73,15 +74,23 @@ public class StackSpawner : MonoSingleton<StackSpawner>
     [ContextMenu("SpawnStacks")]
     void SpawnStacks()
     {
+        Sequence sequence = DOTween.Sequence();
         for (int i = 0; i < _count; i++)
         {
             int spawnPosIndex = i + 1; // Because when use this extension "GetComponentsInChildren" it adds this transform itself to the array too
-            PickableStack cloneStack = Instantiate(stackPrefab, spawnPoints[spawnPosIndex].position, Quaternion.identity);
+            //PickableStack cloneStack = Instantiate(stackPrefab, spawnPoints[spawnPosIndex].position, Quaternion.identity);
+            PickableStack cloneStack = Instantiate(stackPrefab, spawnPoint.position, Quaternion.identity);
+            cloneStack._startPos = spawnPoints[spawnPosIndex].position;
             stacks.Add(cloneStack.transform);
 
-            foreach (var stack in stacks)
+            //foreach (var stack in stacks)
+            //{
+            //    sequence.Join(stack.DOScale(1, .2f).SetEase(Ease.OutBounce));
+            //}
+
+            for (int j = 0; j < stacks.Count; j++)
             {
-                stack.DOScale(1, .3f).SetEase(Ease.OutBounce);
+                sequence.Append(stacks[j].DOMove(spawnPoints[j+1].position, .2f).SetEase(Ease.OutBack));
             }
         }
 

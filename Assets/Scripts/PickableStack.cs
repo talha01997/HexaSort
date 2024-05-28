@@ -10,7 +10,8 @@ public class PickableStack : MonoBehaviour
     [SerializeField] LayerMask cellLayer;
 
     [Header("Debug")]
-    Vector3 _startPos;
+    public Vector3 _startPos;
+    public Vector3 assignedPosition;
     //public Vector3 offset => new Vector3(0, .5f, 2);
     public Vector3 offset = new Vector3(0, .5f, 2);
     Collider _collider => GetComponent<Collider>();
@@ -20,7 +21,7 @@ public class PickableStack : MonoBehaviour
     [SerializeField] bool isVibrating;
     private void Awake()
     {
-        _startPos = transform.position;
+        //_startPos = assignedPosition;
     }
 
     IEnumerator Start()

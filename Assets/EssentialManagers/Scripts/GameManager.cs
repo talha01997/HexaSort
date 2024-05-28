@@ -58,7 +58,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         isLevelActive = false;
         isLevelSuccessful = success;
-
+        print("level ended");
         LevelEndedEvent?.Invoke();
         if (success)
         {

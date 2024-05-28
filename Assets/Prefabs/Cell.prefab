@@ -569,8 +569,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5803405723186675447}
-  - component: {fileID: 4819352589161838557}
-  - component: {fileID: 8161533824084458551}
   m_Layer: 0
   m_Name: HexStackParent
   m_TagString: Untagged
@@ -593,34 +591,6 @@ Transform:
   m_Father: {fileID: 8926865946399105303}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4819352589161838557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7714821636398699848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de9bc4b528fad42298dc648d6bdb0a84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startPos: {x: 0, y: 0, z: 0}
-  mouseOffset: {x: 0, y: 0, z: 0}
-  isPicked: 0
---- !u!65 &8161533824084458551
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7714821636398699848}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.7569172, y: 0.4566502, z: 0.8132969}
-  m_Center: {x: 0, y: 0.101388484, z: 0}
 --- !u!1 &8885460012147177942
 GameObject:
   m_ObjectHideFlags: 0

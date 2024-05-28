@@ -29,11 +29,13 @@ public class CellController : MonoBehaviour
 
     private void OnEnable()
     {
+        GameManager.instance.LevelEndedEvent += LevelEnd;
         UiManager.instance.HammerOn += HammerOn;
         UiManager.instance.HammerOff += HammerOff;
     }
     private void OnDisable()
     {
+        GameManager.instance.LevelEndedEvent -= LevelEnd;
         UiManager.instance.HammerOn -= HammerOn;
         UiManager.instance.HammerOff -= HammerOff;
     }
@@ -432,6 +434,13 @@ public class CellController : MonoBehaviour
             DOTween.Kill("CellShake");
             //HexStackParent.DOShakeRotation(.35f, new Vector3(0, 15, 0), 5, 90, true).SetLoops(-1, LoopType.Yoyo).SetId("CellShake");
         }
+    }
+
+    void LevelEnd()
+    {
+        print("level end test");
+        //HexStackParent.transform.localPosition = new Vector3(0, -10, 0);
+        HexStackParent.DOLocalMove(new Vector3(0, -5, 0), 1f);
     }
     public bool IsThereBlast()
     {
