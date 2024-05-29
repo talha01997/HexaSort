@@ -48,8 +48,13 @@ public class MainMenuManager : MonoBehaviour
     public void OnClickProfile()
     {
         profilePanel.SetActive(true);
+        //menuPanel.SetActive(false);
     }
-
+    public void OnCloseProfile()
+    {
+        profilePanel.SetActive(false);
+        //menuPanel.SetActive(true);
+    }
     public void OnClickSpin()
     {
         spinPanel.SetActive(true);
