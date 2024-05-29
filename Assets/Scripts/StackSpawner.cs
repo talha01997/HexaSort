@@ -90,7 +90,7 @@ public class StackSpawner : MonoSingleton<StackSpawner>
 
             for (int j = 0; j < stacks.Count; j++)
             {
-                sequence.Append(stacks[j].DOMove(spawnPoints[j+1].position, .2f).SetEase(Ease.OutBack));
+                sequence.Prepend(stacks[j].DOMove(spawnPoints[j+1].position, .2f).SetEase(Ease.OutBack));
             }
         }
 
