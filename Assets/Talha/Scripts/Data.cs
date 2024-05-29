@@ -7,7 +7,6 @@ using System.IO;
 public class Data : MonoBehaviour
 {
     public static Data instance;
-    public int selectedMode;
     private void Awake()
     {
         if (!instance)

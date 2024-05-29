@@ -20,6 +20,11 @@ public class SoundManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            DestroyImmediate(gameObject);
         }
     }
 
@@ -99,25 +104,48 @@ public class SoundManager : MonoBehaviour
     {
         
     }
-
+    public void ToggleState(int num, bool state)
+    {
+        switch (num)
+        {
+            case 0:
+                CheckMusicState(state);
+                break;
+            case 1:
+                CheckSoundsState(state);
+                break;
+            case 2:
+                CheckHapticState(state);
+                break;
+            default:
+                break;
+        }
+    }
     public void CheckSoundsState(bool state)
     {
         canPlaySFX = state;
         SFXAudioSource.gameObject.SetActive(state);
+        PlayerPrefs.SetInt("SFXState", ConvertToInteger(state));
     }
     public void CheckMusicState(bool state)
     {
         canPlayBg = state;
         BGAudioSource.gameObject.SetActive(state);
+        PlayerPrefs.SetInt("MusicState", ConvertToInteger(state));
     }
 
     public void CheckHapticState(bool state)
     {
         canPlayHaptic = state;
+        PlayerPrefs.SetInt("HapticState", ConvertToInteger(state));
     }
     public void OnLevelComplete()
     {
         //PlaySFXSound("win");
+    }
+    public int ConvertToInteger(bool value)
+    {
+        return value ? 1 : 0;
     }
 }
 [System.Serializable]

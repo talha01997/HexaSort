@@ -6,10 +6,12 @@ using DG.Tweening;
 using TMPro;
 using System;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class UiManager : MonoBehaviour
 {
     public static UiManager instance;
+    [SerializeField] GameObject pausePanel;
     [SerializeField] Button hammerBtn, respawnBtn;
     [SerializeField] Transform sliderParent;
     [SerializeField] Slider lvlBarSlider;
@@ -55,6 +57,25 @@ public class UiManager : MonoBehaviour
 
         GridManager.instance.CheckLockedCells(currentScore);
 
+    }
+    public void OnClickPause()
+    {
+        pausePanel.SetActive(true);
+    }
+
+    public void OnClickResume()
+    {
+        pausePanel.SetActive(false);
+    }
+
+    public void OnClickHome()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void OnClickRestart()
+    {
+        SceneManager.LoadScene("PokerGameplay");
     }
 
     public void ActivateHammer()
