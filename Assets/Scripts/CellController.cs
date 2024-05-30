@@ -533,7 +533,7 @@ public class CellController : MonoBehaviour
 
     public IEnumerator BlastSelectedHexList(List<HexagonController> hexList)
     {
-        int hexCount = 0;
+        int hexCount = hexList.Count;
         if (hexList.Count > 10)
             hexCount = hexList.Count;
         else

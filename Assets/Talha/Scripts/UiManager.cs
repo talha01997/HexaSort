@@ -53,7 +53,7 @@ public class UiManager : MonoBehaviour
 
     void UpdateScore(int score)
     {
-        currentScore += 10;
+        currentScore += score;
         sliderParent.DOScale(1.2f, .25f).SetLoops(2, LoopType.Yoyo).SetEase(Ease.OutBack);
         lvlBarSlider.DOValue(currentScore, .25f);
         scoreTxt.text = $"{currentScore}/{totalScore}";
