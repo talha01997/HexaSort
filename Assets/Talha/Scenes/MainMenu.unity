@@ -358,7 +358,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1365693349}
+      - m_Target: {fileID: 1193080953}
         m_TargetAssemblyTypeName: ProfileManager, Assembly-CSharp
         m_MethodName: OnClickAvatarBtn
         m_Mode: 3
@@ -644,6 +644,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 188517741}
   m_CullTransparentMesh: 1
+--- !u!1 &189022363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 189022364}
+  - component: {fileID: 189022365}
+  - component: {fileID: 189022366}
+  m_Layer: 5
+  m_Name: Avatar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &189022364
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189022363}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1500091058}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0}
+  m_SizeDelta: {x: 79.0449, y: 79.045}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!222 &189022365
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189022363}
+  m_CullTransparentMesh: 1
+--- !u!114 &189022366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189022363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: facb014159486465aa4f51cea36f43e5, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &191981346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,7 +1615,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1365693349}
+      - m_Target: {fileID: 1193080953}
         m_TargetAssemblyTypeName: ProfileManager, Assembly-CSharp
         m_MethodName: OnClickAvatarBtn
         m_Mode: 3
@@ -2796,6 +2872,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a51a01cd53399433eb78eae34537b8bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  userName: 
+  avatarNum: 0
+  firstPlay: 0
 --- !u!1 &729706216
 GameObject:
   m_ObjectHideFlags: 0
@@ -3020,7 +3099,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 91.43091}
+  m_AnchoredPosition: {x: 0, y: 91.430664}
   m_SizeDelta: {x: 0, y: -182.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &790497051
@@ -3503,7 +3582,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1365693349}
+      - m_Target: {fileID: 1193080953}
         m_TargetAssemblyTypeName: ProfileManager, Assembly-CSharp
         m_MethodName: OnClickAvatarBtn
         m_Mode: 3
@@ -4080,7 +4159,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1365693349}
+      - m_Target: {fileID: 1193080953}
         m_TargetAssemblyTypeName: ProfileManager, Assembly-CSharp
         m_MethodName: OnClickAvatarBtn
         m_Mode: 3
@@ -4688,7 +4767,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1365693349}
+      - m_Target: {fileID: 1193080953}
         m_TargetAssemblyTypeName: ProfileManager, Assembly-CSharp
         m_MethodName: OnClickAvatarBtn
         m_Mode: 3
@@ -5140,6 +5219,10 @@ MonoBehaviour:
   soundsContainer:
   - name: Swish
     clip: {fileID: 8300000, guid: f0954ea048b84413c97062f262c02780, type: 3}
+  - name: Knock
+    clip: {fileID: 8300000, guid: 21862ab40fa8d423daf0c850881d6364, type: 3}
+  - name: Click
+    clip: {fileID: 8300000, guid: 8f3766119f3ee4fe48b5c7fe31cfe057, type: 3}
 --- !u!1 &1091068108
 GameObject:
   m_ObjectHideFlags: 0
@@ -5664,6 +5747,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188909378}
   m_CullTransparentMesh: 1
+--- !u!1 &1193080951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1193080952}
+  - component: {fileID: 1193080953}
+  m_Layer: 0
+  m_Name: Profile Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1193080952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193080951}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1237211504}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1193080953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193080951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6bb67194a5734f58abcb4e6f8bd454b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profileParent: {fileID: 1365693347}
+  nameTxt: {fileID: 1849294082}
+  avatarImg: {fileID: 189022366}
+  buttonImages:
+  - {fileID: 1472065381}
+  - {fileID: 2105620085}
+  - {fileID: 885004609}
+  - {fileID: 849076877}
+  - {fileID: 1804656456}
+  - {fileID: 1354027683}
+  - {fileID: 118632665}
+  - {fileID: 424149549}
+  - {fileID: 998322757}
+  - {fileID: 1343512704}
+  - {fileID: 2008105492}
+  - {fileID: 2094555269}
+  playerIcons: []
+  myAvatar: {fileID: 1589816265}
+  nameField: {fileID: 582526635}
+  avatarNum: 0
+  userName: 
 --- !u!1 &1201098821
 GameObject:
   m_ObjectHideFlags: 0
@@ -5892,6 +6040,7 @@ Transform:
   - {fileID: 1908517352}
   - {fileID: 729479558}
   - {fileID: 1601696572}
+  - {fileID: 1193080952}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6132,7 +6281,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1365693349}
+      - m_Target: {fileID: 1193080953}
         m_TargetAssemblyTypeName: ProfileManager, Assembly-CSharp
         m_MethodName: OnClickAvatarBtn
         m_Mode: 3
@@ -6266,7 +6415,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1365693349}
+      - m_Target: {fileID: 1193080953}
         m_TargetAssemblyTypeName: ProfileManager, Assembly-CSharp
         m_MethodName: OnClickAvatarBtn
         m_Mode: 3
@@ -6446,7 +6595,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1365693348}
-  - component: {fileID: 1365693349}
   m_Layer: 5
   m_Name: Profile
   m_TagString: Untagged
@@ -6475,35 +6623,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 91.43262}
   m_SizeDelta: {x: 0, y: -182.8652}
   m_Pivot: {x: 0.49999997, y: 0.5}
---- !u!114 &1365693349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365693347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6bb67194a5734f58abcb4e6f8bd454b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonImages:
-  - {fileID: 1472065381}
-  - {fileID: 2105620085}
-  - {fileID: 885004609}
-  - {fileID: 849076877}
-  - {fileID: 1804656456}
-  - {fileID: 1354027683}
-  - {fileID: 118632665}
-  - {fileID: 424149549}
-  - {fileID: 998322757}
-  - {fileID: 1343512704}
-  - {fileID: 2008105492}
-  - {fileID: 2094555269}
-  playerIcons: []
-  myAvatar: {fileID: 1589816265}
-  nameField: {fileID: 582526635}
-  userName: 
 --- !u!1 &1387437496
 GameObject:
   m_ObjectHideFlags: 0
@@ -6587,9 +6706,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1908517353}
-        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: OnCloseProfile
+      - m_Target: {fileID: 1193080953}
+        m_TargetAssemblyTypeName: ProfileManager, Assembly-CSharp
+        m_MethodName: OnClickCloseBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7078,7 +7197,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1365693349}
+      - m_Target: {fileID: 1193080953}
         m_TargetAssemblyTypeName: ProfileManager, Assembly-CSharp
         m_MethodName: OnClickAvatarBtn
         m_Mode: 3
@@ -7160,6 +7279,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1849294081}
+  - {fileID: 189022364}
   m_Father: {fileID: 1923809538}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8512,7 +8632,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1365693349}
+      - m_Target: {fileID: 1193080953}
         m_TargetAssemblyTypeName: ProfileManager, Assembly-CSharp
         m_MethodName: OnClickAvatarBtn
         m_Mode: 3
@@ -9251,6 +9371,7 @@ MonoBehaviour:
   - {fileID: 683641348}
   - {fileID: 353833365}
   disabledColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
+  avatarNum: 0
 --- !u!1 &1916890984
 GameObject:
   m_ObjectHideFlags: 0
@@ -9843,7 +9964,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1365693349}
+      - m_Target: {fileID: 1193080953}
         m_TargetAssemblyTypeName: ProfileManager, Assembly-CSharp
         m_MethodName: OnClickAvatarBtn
         m_Mode: 3
@@ -10219,7 +10340,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1365693349}
+      - m_Target: {fileID: 1193080953}
         m_TargetAssemblyTypeName: ProfileManager, Assembly-CSharp
         m_MethodName: OnClickAvatarBtn
         m_Mode: 3
@@ -10353,7 +10474,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1365693349}
+      - m_Target: {fileID: 1193080953}
         m_TargetAssemblyTypeName: ProfileManager, Assembly-CSharp
         m_MethodName: OnClickAvatarBtn
         m_Mode: 3

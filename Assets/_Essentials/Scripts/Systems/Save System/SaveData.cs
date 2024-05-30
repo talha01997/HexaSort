@@ -35,13 +35,15 @@ public sealed class SaveData
     public bool SFX    = true;
     
     public bool Haptic = true;
+
+    public bool firstPlay = true;
     [Space]
     
     public int Level  = 1;
     
     public int Coins  = 0;
 
-    public int Lives;
+    public int avatarNum;
 
     public string userName;
 
@@ -57,10 +59,10 @@ public sealed class SaveData
         Music  = data.Music;
         SFX    = data.SFX;
         Haptic = data.Haptic;
-
+        firstPlay = data.firstPlay;
         Level  = data.Level;
         Coins  = data.Coins;
-        Lives = data.Lives;
+        avatarNum = data.avatarNum;
         userName = data.userName;
     }//CopyConstructor() end
 

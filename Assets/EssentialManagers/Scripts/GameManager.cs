@@ -63,6 +63,7 @@ public class GameManager : MonoSingleton<GameManager>
         if (success)
         {
             LevelSuccessEvent?.Invoke();
+            EconomySystem.instance.AddCash(10);
         }
         else
         {

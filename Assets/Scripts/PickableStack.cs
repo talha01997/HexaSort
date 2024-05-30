@@ -144,6 +144,7 @@ public class PickableStack : MonoBehaviour
         {
             isVibrating = true;
             Vibration.VibratePop();
+            SoundManager.instance.PlaySFXSound("Knock");
         }
     }
     public void GetPicked()

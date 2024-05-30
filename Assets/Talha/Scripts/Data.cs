@@ -7,6 +7,9 @@ using System.IO;
 public class Data : MonoBehaviour
 {
     public static Data instance;
+    public string userName;
+    public int avatarNum;
+    public bool firstPlay;
     private void Awake()
     {
         if (!instance)
@@ -28,20 +31,25 @@ public class Data : MonoBehaviour
         }
         else
         {
-            SaveMyData();
-            EconomySystem.instance.AddCash(300);
+            MainMenuManager.instance.OnClickProfile();
+            //SaveMyData();
+            //EconomySystem.instance.AddCash(300);
         }
     }
 
     void LoadSavedData()
     {
         SaveSystem.LoadProgress();
-
+        firstPlay = SaveData.Instance.firstPlay;
+        userName = SaveData.Instance.userName;
+        avatarNum = SaveData.Instance.avatarNum;
     }
 
     public void SaveMyData()
     {
-
+        SaveData.Instance.firstPlay = firstPlay;
+        SaveData.Instance.userName = userName;
+        SaveData.Instance.avatarNum = avatarNum;
         SaveSystem.SaveProgress();
     }
 

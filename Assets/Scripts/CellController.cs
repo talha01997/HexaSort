@@ -533,6 +533,12 @@ public class CellController : MonoBehaviour
 
     public IEnumerator BlastSelectedHexList(List<HexagonController> hexList)
     {
+        int hexCount = 0;
+        if (hexList.Count > 10)
+            hexCount = hexList.Count;
+        else
+            hexCount = 10;
+
         var hexPosition = hexList[0].transform.position;
         print(hexPosition);
         blastCompleted = false;
@@ -543,7 +549,7 @@ public class CellController : MonoBehaviour
         }
         yield return new WaitForSeconds(.1f);
         //CoinsManager.Instance.AnimateStar(hexPosition);
-        CoinsManager.Instance.AddCoins(new Vector3(hexPosition.x, hexPosition.y + .5f, hexPosition.z), 1);
+        CoinsManager.Instance.AddCoins(new Vector3(hexPosition.x, hexPosition.y + .5f, hexPosition.z), 1,hexCount);
         blastCompleted = true;
         //CanvasManager.instance.UpdateScoreText();
     }

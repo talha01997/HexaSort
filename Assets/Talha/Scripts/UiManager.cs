@@ -40,8 +40,11 @@ public class UiManager : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start()
     {
+
         CanvasManager.instance.ScoreUpdatedEvent += UpdateScore;
         yield return new WaitForSeconds(.6f);
+        SoundManager.instance.BGAudioSource.volume = .1f;
+
         totalScore = GameManager.instance.MaxTargetScore;
         lvlBarSlider.maxValue = totalScore;
         lvlBarSlider.value = currentScore;
@@ -60,26 +63,31 @@ public class UiManager : MonoBehaviour
     }
     public void OnClickPause()
     {
+        SoundManager.instance.PlaySFXSound("Click");
         pausePanel.SetActive(true);
     }
 
     public void OnClickResume()
     {
+        SoundManager.instance.PlaySFXSound("Click");
         pausePanel.SetActive(false);
     }
 
     public void OnClickHome()
     {
+        SoundManager.instance.PlaySFXSound("Click");
         SceneManager.LoadScene("MainMenu");
     }
 
     public void OnClickRestart()
     {
+        SoundManager.instance.PlaySFXSound("Click");
         SceneManager.LoadScene("PokerGameplay");
     }
 
     public void ActivateHammer()
     {
+        SoundManager.instance.PlaySFXSound("Click");
         HammerOn?.Invoke();
     }
 

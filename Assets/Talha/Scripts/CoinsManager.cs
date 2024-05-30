@@ -74,7 +74,7 @@ public class CoinsManager : MonoBehaviour
         }
     }
 
-    IEnumerator Animate(Vector3 collectedCoinPosition, int amount)
+    IEnumerator Animate(Vector3 collectedCoinPosition, int amount, int score)
     {
         //yield return new WaitForSeconds(1);
         for (int i = 0; i < amount; i++)
@@ -99,7 +99,7 @@ public class CoinsManager : MonoBehaviour
                     //executes whenever coin reach target position
                     coin.SetActive(false);
                     coinsQueue.Enqueue(coin);
-                    CanvasManager.instance.UpdateScoreText();
+                    CanvasManager.instance.UpdateScoreText(score);
                     //coinUIText.text = Coins.ToString();
                     // Coins++;
                     //CurrencyManager.Instance.PlusCurrencyValue("Coins", 1);
@@ -109,10 +109,10 @@ public class CoinsManager : MonoBehaviour
         yield return null;
     }
 
-    public void AddCoins(Vector3 collectedCoinPosition, int amount)
+    public void AddCoins(Vector3 collectedCoinPosition, int amount, int score)
     {
         print("animated");
-        StartCoroutine(Animate(WordPointToCanvasPoint(Camera.main, collectedCoinPosition, canvasRect), amount));
+        StartCoroutine(Animate(WordPointToCanvasPoint(Camera.main, collectedCoinPosition, canvasRect), amount,score));
     }
 
     public Vector2 WordPointToCanvasPoint(Camera camera, Vector3 worldPoint, RectTransform canvasRect)

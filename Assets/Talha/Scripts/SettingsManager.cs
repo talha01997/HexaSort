@@ -49,5 +49,6 @@ public class ToggleButtons
                 SoundManager.instance.ToggleState(num, state);
                 break;
         }
+        SoundManager.instance.PlaySFXSound("Click");
     }
 }

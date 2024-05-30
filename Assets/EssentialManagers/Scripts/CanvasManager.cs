@@ -71,9 +71,9 @@ public class CanvasManager : MonoSingleton<CanvasManager>
         GameManager.instance.LevelFailedEvent += (() => ShowPanel(PanelType.Fail));
     }
 
-    public void UpdateScoreText()
+    public void UpdateScoreText(int scoreToAdd)
     {
-        currentScore += 10; // just for demonstration no need to add specific currentScore system 
+        currentScore += scoreToAdd; // just for demonstration no need to add specific currentScore system 
         //scoreText.text = "Score: " + currentScore.ToString();
 
         ScoreUpdatedEvent?.Invoke(currentScore);

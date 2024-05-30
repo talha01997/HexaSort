@@ -16,6 +16,7 @@ public class NeedleHandler : MonoBehaviour
         if (collision.gameObject.GetComponent<WheelReward>())
         {
             spinWheel.coins = collision.gameObject.GetComponent<WheelReward>().coins;
+            SoundManager.instance.PlaySFXSound("Knock");
         }
     }
 }
