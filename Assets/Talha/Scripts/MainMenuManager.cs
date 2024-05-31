@@ -20,7 +20,7 @@ public class MainMenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SoundManager.instance.BGAudioSource.volume = 1;
+        SoundManager.instance.BGAudioSource.volume = .75f;
     }
 
     public void OnClickStore(int btnNum)

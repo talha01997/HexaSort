@@ -30,6 +30,7 @@ public class SpinWheel : MonoBehaviour
     void GiveCash()
     {
         print("coins:" + coins);
+        EconomySystem.instance.AddCash(coins);
     }
 
     // Example method to trigger the rotation

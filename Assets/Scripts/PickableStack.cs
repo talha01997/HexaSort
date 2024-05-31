@@ -14,6 +14,7 @@ public class PickableStack : MonoBehaviour
     public Vector3 assignedPosition;
     //public Vector3 offset => new Vector3(0, .5f, 2);
     public Vector3 offset = new Vector3(0, .5f, 2);
+    public Vector3 rayOffset;
     Collider _collider => GetComponent<Collider>();
     [SerializeField] List<HexagonController> hexagons = new List<HexagonController>();
 
@@ -85,7 +86,7 @@ public class PickableStack : MonoBehaviour
 
             hex.transform.DOLocalMove(new Vector3(0, i * GridManager.instance.VERTICAL_PLACEMENT_OFFSET, 0), 0.3f);
         }
-
+        SoundManager.instance.PlaySFXSound("Drop");
         InputManager.instance.SetBlockPicking(shouldBlock: false);
         InputManager.instance.TriggerStackPlacedOnGridEvent(this);
         targetCell.SetOccupied(true);
@@ -102,10 +103,12 @@ public class PickableStack : MonoBehaviour
 
     #region GETTERS
 
+    CellController currentCell, lastCell;
+
     CellController GetCellBelow()
     {
         RaycastHit hit;
-        Ray ray = new Ray(transform.position, -transform.up);
+        Ray ray = new Ray(transform.position+ rayOffset, -transform.up);
 
         Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red);
 
@@ -113,7 +116,15 @@ public class PickableStack : MonoBehaviour
         {
             if (hit.collider.transform.parent.parent.TryGetComponent(out CellController cell))
             {
+                currentCell = cell;
+                if (lastCell != null && currentCell!=lastCell)
+                {
+                    isVibrating = false;
+                }
+
+                lastCell = cell;
                 VibrateOnce();
+                //isVibrating = false;
                 foreach (var item in GridManager.instance.cells)
                 {
                     if (!item.isLocked)

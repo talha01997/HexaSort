@@ -43,7 +43,7 @@ public class UiManager : MonoBehaviour
 
         CanvasManager.instance.ScoreUpdatedEvent += UpdateScore;
         yield return new WaitForSeconds(.6f);
-        SoundManager.instance.BGAudioSource.volume = .1f;
+        SoundManager.instance.BGAudioSource.volume = 0;
 
         totalScore = GameManager.instance.MaxTargetScore;
         lvlBarSlider.maxValue = totalScore;

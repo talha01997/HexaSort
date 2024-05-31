@@ -41,7 +41,7 @@ public sealed class SaveData
     
     public int Level  = 1;
     
-    public int Coins  = 0;
+    public int cash;
 
     public int avatarNum;
 
@@ -61,7 +61,7 @@ public sealed class SaveData
         Haptic = data.Haptic;
         firstPlay = data.firstPlay;
         Level  = data.Level;
-        Coins  = data.Coins;
+        cash  = data.cash;
         avatarNum = data.avatarNum;
         userName = data.userName;
     }//CopyConstructor() end

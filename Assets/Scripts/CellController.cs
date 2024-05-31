@@ -335,7 +335,7 @@ public class CellController : MonoBehaviour
                             WillSendRopeList[i].transform.DOLocalRotate(new Vector3(180, 0, 0), .3f);
                             WillSendRopeList[i].transform.DOLocalMove(new Vector3(0, SelectedGridPart.hexagons.Count * GridManager.instance.VERTICAL_PLACEMENT_OFFSET, 0), 0.3f);
                             Vibration.VibratePop();
-                            SoundManager.instance.PlaySFXSound("Swish");
+                            SoundManager.instance.PlaySFXSound("Bounce");
                             SelectedGridPart.hexagons.Add(WillSendRopeList[i]);
                             hexagons.RemoveAt(hexagons.Count - 1);
                             yield return new WaitForSeconds(0.06f);
@@ -377,7 +377,7 @@ public class CellController : MonoBehaviour
                             WillTakeRopeList[i].transform.DOLocalRotate(new Vector3(180, 0, 0), .3f);
                             WillTakeRopeList[i].transform.DOLocalMove(new Vector3(0, hexagons.Count * GridManager.instance.VERTICAL_PLACEMENT_OFFSET, 0), 0.3f);
                             Vibration.VibratePop();
-                            SoundManager.instance.PlaySFXSound("Swish");
+                            SoundManager.instance.PlaySFXSound("Bounce");
                             hexagons.Add(WillTakeRopeList[i]);
                             
                             SelectedGridPart.hexagons.RemoveAt(SelectedGridPart.hexagons.Count - 1);

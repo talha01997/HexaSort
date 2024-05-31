@@ -26,7 +26,7 @@ public class HexagonController : MonoBehaviour
         transform.DOScale(Vector3.zero, .2f).SetEase(Ease.InBack).OnComplete(() =>
         {
             Vibration.VibratePeek();
-            SoundManager.instance.PlaySFXSound("Swish");
+            SoundManager.instance.PlaySFXSound("Break");
             Destroy(gameObject, .05f);
         });
         //CoinsManager.Instance.AddCoins(transform.position, 1);

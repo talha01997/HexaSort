@@ -92,6 +92,7 @@ public class CoinsManager : MonoBehaviour
 
                 //animate coin to target position
                 float duration = Random.Range(minAnimDuration, maxAnimDuration);
+                SoundManager.instance.PlaySFXSound("Star");
                 coin.transform.DOMove(targetPosition, duration)
                 .SetEase(easeType)/*.OnUpdate(() => { coin.transform.DOScale(0.08f, 1); })*/
                 .OnComplete(() =>

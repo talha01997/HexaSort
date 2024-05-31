@@ -48,14 +48,14 @@ public class EconomySystem : MonoBehaviour
     void LoadCashData()
     {
         SaveSystem.LoadProgress();
-        //cash = SaveData.Instance.cash;
+        cash = SaveData.Instance.cash;
         currentCash = cash.ToString();
         UpdateUI();
     }
 
     void SaveThisData()
     {
-        //SaveData.Instance.cash = cash;
+        SaveData.Instance.cash = cash;
         SaveSystem.SaveProgress();
 
     }
