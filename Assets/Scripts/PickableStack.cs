@@ -72,6 +72,11 @@ public class PickableStack : MonoBehaviour
     }
     void GoToCell(CellController targetCell)
     {
+        targetCell.transform.DOScale(1, .2f);
+        foreach (var item in targetCell.hexagons)
+        {
+            item.transform.DOScale(1, .2f);
+        }
         targetCell.UpdateHexagonsList(hexagons);
 
         for (int i = 0; i < hexagons.Count; i++)
@@ -112,11 +117,15 @@ public class PickableStack : MonoBehaviour
                 foreach (var item in GridManager.instance.cells)
                 {
                     if (!item.isLocked)
-                        item.opaqueMesh.GetComponent<MeshRenderer>().material.DOColor(unSelectedColor, .2f);
+                    {
+                        item.transform.DOScale(1, .2f);
+                    }
+                    //item.opaqueMesh.GetComponent<MeshRenderer>().material.DOColor(unSelectedColor, .2f);
                 }
                 if (!cell.isLocked && !cell.isOccupied)
                 {
-                    cell.opaqueMesh.GetComponent<MeshRenderer>().material.DOColor(selectedColor, .2f);
+                    cell.transform.DOScale(1.3f, .2f);
+                    //cell.opaqueMesh.GetComponent<MeshRenderer>().material.DOColor(selectedColor, .2f);
                     return cell;
                 }
                 else
@@ -132,7 +141,10 @@ public class PickableStack : MonoBehaviour
             foreach (var item in GridManager.instance.cells)
             {
                 if (!item.isLocked)
-                    item.opaqueMesh.GetComponent<MeshRenderer>().material.DOColor(unSelectedColor, .2f);
+                {
+                    item.transform.DOScale(1, .2f);
+                }
+                //item.opaqueMesh.GetComponent<MeshRenderer>().material.DOColor(unSelectedColor, .2f);
             }
         }
         return null;

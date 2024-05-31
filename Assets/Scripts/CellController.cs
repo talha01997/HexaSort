@@ -24,7 +24,7 @@ public class CellController : MonoBehaviour
     [SerializeField] Vector2 _coordinates = Vector2.zero;
     [SerializeField] Vector3 hammerOffset;
     [Header("Hexagons Related")]
-    [SerializeField] List<HexagonController> hexagons = new List<HexagonController>();
+    public List<HexagonController> hexagons = new List<HexagonController>();
     public List<TextureInfo.TextureEnum> contentInfo;
 
     private void OnEnable()
@@ -218,6 +218,12 @@ public class CellController : MonoBehaviour
                                 SelectedNeighbour = SelectedNeighbours[i];
                                 break;
                             }
+                            else if (GridManager.instance.GridPlan[(int)SelectedNeighbours[i].x, (int)SelectedNeighbours[i].y].CellObject.GetComponent<CellController>().IsPure() && IsPure())
+                            {
+                                SendOrTake = GridManager.TransferType.Take;
+                                SelectedNeighbour = SelectedNeighbours[i];
+                                break;
+                            }
                         }
                     }
                     else if (SelectedNeighbours.Count > 1)
@@ -373,6 +379,7 @@ public class CellController : MonoBehaviour
                             Vibration.VibratePop();
                             SoundManager.instance.PlaySFXSound("Swish");
                             hexagons.Add(WillTakeRopeList[i]);
+                            
                             SelectedGridPart.hexagons.RemoveAt(SelectedGridPart.hexagons.Count - 1);
                             yield return new WaitForSeconds(0.06f);
                         }
@@ -558,6 +565,10 @@ public class CellController : MonoBehaviour
         for (int i = 0; i < hexes.Count; i++)
         {
             hexagons.Add(hexes[i]);
+            foreach (var item in hexagons)
+            {
+                item.transform.DOScale(1, .2f);
+            }
             hexes[i].transform.SetParent(HexStackParent);
             GridManager.instance.GridPlan[(int)_coordinates.x, (int)_coordinates.y].CellContentList.Add(hexes[i].GetTexture());
         }
