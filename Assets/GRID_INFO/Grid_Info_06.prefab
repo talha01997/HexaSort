@@ -58,8 +58,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 3, y: 2}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 
 --- !u!1 &107049346758092332
@@ -478,8 +480,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 4, y: 1}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 01000000020000000200000002000000
 --- !u!1 &732640564522129478
@@ -769,8 +773,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 0, y: 4}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 
 --- !u!1 &862822973565185444
@@ -1223,8 +1229,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 0, y: 1}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 
 --- !u!1 &1265945032916442399
@@ -1576,8 +1584,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 1, y: 2}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 03000000010000000100000001000000
 --- !u!1 &1852467607992334315
@@ -2062,8 +2072,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 3, y: 4}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 
 --- !u!1 &2832940477563229820
@@ -2379,8 +2391,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 2, y: 3}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 
 --- !u!1 &3417530337499034877
@@ -2865,8 +2879,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 1, y: 3}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 
 --- !u!1 &3625079811819064549
@@ -3025,8 +3041,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 0, y: 0}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 
 --- !u!1 &3708218191543323539
@@ -3185,8 +3203,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 2, y: 2}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 
 --- !u!1 &3830702720536145183
@@ -3737,8 +3757,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 4, y: 3}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 
 --- !u!1 &4403628089959173021
@@ -3930,8 +3952,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 4, y: 4}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 
 --- !u!1 &4744935095500377459
@@ -4448,8 +4472,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 1, y: 4}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 
 --- !u!1 &5130550592039130542
@@ -5030,8 +5056,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 2, y: 4}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 
 --- !u!1 &5645452653633443726
@@ -5156,8 +5184,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 3, y: 1}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 03000000010000000100000001000000
 --- !u!1 &5824341526979803222
@@ -5509,8 +5539,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 3, y: 3}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 
 --- !u!1 &6206256981660967219
@@ -5571,8 +5603,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 2, y: 0}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 
 --- !u!1 &6213252437358953448
@@ -5762,8 +5796,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 4, y: 2}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 
 --- !u!1 &6281538451764717868
@@ -5922,8 +5958,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 3, y: 0}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 
 --- !u!1 &6532835231173872027
@@ -6308,8 +6346,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 4, y: 0}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 
 --- !u!1 &7245282087533490557
@@ -6565,8 +6605,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 2, y: 1}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 
 --- !u!1 &7573317229615334842
@@ -6689,8 +6731,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 1, y: 0}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 
 --- !u!1 &7868684542513199069
@@ -6946,8 +6990,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 0, y: 2}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 
 --- !u!1 &8117234757104281616
@@ -7431,8 +7477,10 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 0, y: 3}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 01000000020000000200000002000000
 --- !u!1 &8400487101520255870
@@ -7701,7 +7749,7 @@ MonoBehaviour:
     unlockWithAd: 1
     unlockWithScore: 0
     scoreToUnlock: 0
-  scoreToWin: 200
+  scoreToWin: 130
   levelKey: Lvl06
 --- !u!1 &8456283221109152477
 GameObject:
@@ -8216,7 +8264,9 @@ MonoBehaviour:
   isLocked: 0
   lockedWithAd: 0
   canClick: 0
+  canHammer: 0
   scoreToUnlock: 0
   _coordinates: {x: 1, y: 1}
+  hammerOffset: {x: 0, y: 0, z: 0}
   hexagons: []
   contentInfo: 

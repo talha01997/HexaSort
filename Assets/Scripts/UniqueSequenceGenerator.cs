@@ -48,15 +48,15 @@ public class UniqueSequenceGenerator : MonoBehaviour
     // Example usage
     void Start()
     {
-        int minRange = 1;
-        int maxRange = 10;
-        int listLength = 10;
+        //int minRange = 1;
+        //int maxRange = 10;
+        //int listLength = 10;
 
-        List<int> sequence = GenerateUniqueSequence(minRange, maxRange, listLength);
+        //List<int> sequence = GenerateUniqueSequence(minRange, maxRange, listLength);
 
-        foreach (int number in sequence)
-        {
-            Debug.Log(number);
-        }
+        //foreach (int number in sequence)
+        //{
+        //    Debug.Log(number);
+        //}
     }
 }

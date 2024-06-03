@@ -1,5 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
+using System.Collections;
+using System.Collections.Generic;
 
 public class SpinWheel : MonoBehaviour
 {
@@ -10,6 +12,9 @@ public class SpinWheel : MonoBehaviour
 
     private float currentRotationAmount;
     public int coins;
+    [SerializeField] Transform cashTarget;
+    [SerializeField] List<GameObject> cashObjects;
+
     void Start()
     {
         currentRotationAmount = initialRotationAmount;
@@ -23,9 +28,23 @@ public class SpinWheel : MonoBehaviour
                  .OnComplete(() => {
                      // Increment the rotation amount for the next spin
                      currentRotationAmount += rotationIncrement;
+                     StartCoroutine(AnimateCash());
+                     
+                 });
+    }
+
+    void Rotate()
+    {
+        // Rotate the wheel by the current rotation amount
+        spinWheel.DORotate(new Vector3(0, 0, -currentRotationAmount), duration, RotateMode.FastBeyond360)
+                 .SetEase(Ease.OutQuad)
+                 .OnComplete(() => {
+                     // Increment the rotation amount for the next spin
+                     currentRotationAmount += rotationIncrement;
                      GiveCash();
                  });
     }
+
 
     void GiveCash()
     {
@@ -42,5 +61,38 @@ public class SpinWheel : MonoBehaviour
         }
     }
 
-    
+    public IEnumerator AnimateCash()
+    {
+        var _sequence = DOTween.Sequence();
+        _sequence = DOTween.Sequence();
+
+        foreach (var cash in cashObjects)
+        {
+            cash.SetActive(true);
+        }
+        //SoundManager.instance.PlaySFXSound("LevelUp");
+        foreach (var cash in cashObjects)
+        {
+            //_sequence.Join(cash.transform.DOMove(cashCollectMidPoint.transform.position, UnityEngine.Random.Range(0.2f, 1f)));
+            _sequence.Join(cash.transform.DOLocalJump(
+                new Vector2(UnityEngine.Random.Range(-150, 150), UnityEngine.Random.Range(-150, 150)), 1, 1, 0.3f));
+        }
+
+        _sequence.OnComplete(
+            () =>
+            {
+                foreach (var cash in cashObjects)
+                {
+                    cash.transform.DOMove(cashTarget.transform.position, UnityEngine.Random.Range(.15f, .65f))
+                        .OnComplete(
+                            () =>
+                            {
+                                cash.SetActive(false);
+                                cash.transform.localPosition = Vector3.zero;
+                            });
+                }
+                GiveCash();
+            });
+        yield return new WaitForSeconds(.5f);
+    }
 }

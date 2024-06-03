@@ -568,7 +568,7 @@ public class CellController : MonoBehaviour
             hexCount = 10;
 
         var hexPosition = hexList[0].transform.position;
-        print(hexPosition);
+        //print(hexPosition);
         blastCompleted = false;
         for (int i = 0; i < hexList.Count; i++)
         {

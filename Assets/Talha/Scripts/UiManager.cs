@@ -17,6 +17,8 @@ public class UiManager : MonoBehaviour
     [SerializeField] Slider lvlBarSlider;
     [SerializeField] TextMeshProUGUI scoreTxt;
     [SerializeField] int currentScore, totalScore;
+    [SerializeField] Transform cashTarget;
+    [SerializeField] List<GameObject> cashObjects;
 
     public event Action HammerOn, HammerOff;
 
@@ -41,7 +43,7 @@ public class UiManager : MonoBehaviour
     IEnumerator Start()
     {
 
-        CanvasManager.instance.ScoreUpdatedEvent += UpdateScore;
+        //CanvasManager.instance.ScoreUpdatedEvent += UpdateScore;
         yield return new WaitForSeconds(.6f);
         SoundManager.instance.BGAudioSource.volume = 0;
 
@@ -51,7 +53,7 @@ public class UiManager : MonoBehaviour
         scoreTxt.text = $"{currentScore}/{totalScore}";
     }
 
-    void UpdateScore(int score)
+    public void UpdateScore(int score)
     {
         currentScore += score;
         sliderParent.DOScale(1.2f, .25f).SetLoops(2, LoopType.Yoyo).SetEase(Ease.OutBack);
@@ -94,5 +96,44 @@ public class UiManager : MonoBehaviour
     public void DeActivateHammer()
     {
         HammerOff?.Invoke();
+    }
+
+    public void DoubleCoins()
+    {
+        //
+    }
+    public IEnumerator AnimateCash()
+    {
+        var _sequence = DOTween.Sequence();
+        _sequence = DOTween.Sequence();
+
+        foreach (var cash in cashObjects)
+        {
+            cash.SetActive(true);
+        }
+        //SoundManager.instance.PlaySFXSound("LevelUp");
+        foreach (var cash in cashObjects)
+        {
+            //_sequence.Join(cash.transform.DOMove(cashCollectMidPoint.transform.position, UnityEngine.Random.Range(0.2f, 1f)));
+            _sequence.Join(cash.transform.DOLocalJump(
+                new Vector2(UnityEngine.Random.Range(-150, 150), UnityEngine.Random.Range(-150, 150)), 1, 1, 0.3f));
+        }
+
+        _sequence.OnComplete(
+            () =>
+            {
+                foreach (var cash in cashObjects)
+                {
+                    cash.transform.DOMove(cashTarget.transform.position, UnityEngine.Random.Range(.15f, .65f))
+                        .OnComplete(
+                            () =>
+                            {
+                                cash.SetActive(false);
+                                cash.transform.localPosition = Vector3.zero;
+                            });
+                }
+                EconomySystem.instance.AddCash(10);
+            });
+        yield return new WaitForSeconds(.5f);
     }
 }

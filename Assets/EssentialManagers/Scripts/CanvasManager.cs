@@ -76,8 +76,8 @@ public class CanvasManager : MonoSingleton<CanvasManager>
         print(scoreToAdd+" scoreeee");
         currentScore += scoreToAdd; // just for demonstration no need to add specific currentScore system 
         //scoreText.text = "Score: " + currentScore.ToString();
-
-        ScoreUpdatedEvent?.Invoke(scoreToAdd);
+        UiManager.instance.UpdateScore(scoreToAdd);
+        ScoreUpdatedEvent?.Invoke(currentScore);
         //GridManager.instance.CheckLockedCells(currentScore);
     }
     public void ShowPanel(PanelType panelId)

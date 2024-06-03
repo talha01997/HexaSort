@@ -24,14 +24,15 @@ public class GameManager : MonoSingleton<GameManager>
     GridManager _gridManager => GridManager.instance;
     private IEnumerator Start()
     {
-        Vibration.Init();
         CanvasManager.instance.ScoreUpdatedEvent += OnScoreUpdated;
         yield return new WaitForSeconds(.5f);
         MaxTargetScore = GridManager.instance.CurrentGridInfo.scoreToWin;
+        Vibration.Init();
     }
 
     private void OnScoreUpdated(int score)
     {
+        print(score + " scoreee");
         if (score >= MaxTargetScore)
             EndGame(success: true);
     }
@@ -56,12 +57,14 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void EndGame(bool success)
     {
+        print("game ended");
         isLevelActive = false;
         isLevelSuccessful = success;
         print("level ended");
         LevelEndedEvent?.Invoke();
         if (success)
         {
+            print("success");
             LevelSuccessEvent?.Invoke();
             EconomySystem.instance.AddCash(10);
         }
