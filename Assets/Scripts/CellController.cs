@@ -455,21 +455,48 @@ public class CellController : MonoBehaviour
     {
         bool performBlast = false;
 
-        
+        TextureInfo.TextureEnum MyTopRopeColor = hexagons[hexagons.Count - 1].GetTexture();
+        List<Vector2> NeighboursCoordinateList = GridManager.instance.GetNeighboursCoordinates(GetCoordinates());
+
         if (IsPure())
         {
             if (hexagons.Count >= GameManager.instance.BlastObjectiveAmount)
             {
-                performBlast = true;
-                canBlast = true;
+                for (int i = 0; i < NeighboursCoordinateList.Count; i++)
+                {
+                    int NeighbourPosX = (int)NeighboursCoordinateList[i].x;
+                    int NeighbourPosY = (int)NeighboursCoordinateList[i].y;
+                    CellData ControlNeighbourGrid = GridManager.instance.GridPlan[NeighbourPosX, NeighbourPosY];
+                    CellController ControlNeighbourGridPart = GridManager.instance.GridPlan[NeighbourPosX, NeighbourPosY].CellObject.GetComponent<CellController>();
+
+                    //If Cell Open And Have a Hexagon
+                    if (ControlNeighbourGrid.isOpen && ControlNeighbourGrid.CellContentList.Count > 0)
+                    {
+                        //If Hexagon Colors Matched
+                        if (MyTopRopeColor == ControlNeighbourGridPart.hexagons[ControlNeighbourGridPart.hexagons.Count - 1].GetTexture())
+                        {
+                            canBlast = false;
+                            return false;
+                        }
+                        else
+                        {
+                            performBlast = true;
+                            canBlast = true;
+                        }
+                    }
+                }
             }
+            
+
+            //if (hexagons.Count >= GameManager.instance.BlastObjectiveAmount)
+            //{
+            //    performBlast = true;
+            //    canBlast = true;
+            //}
 
         }
         if (!IsPure())
         {
-            TextureInfo.TextureEnum MyTopRopeColor = hexagons[hexagons.Count - 1].GetTexture();
-            List<Vector2> NeighboursCoordinateList = GridManager.instance.GetNeighboursCoordinates(GetCoordinates());
-
             //Control All Finded Neighbours Cells
             for (int i = 0; i < NeighboursCoordinateList.Count; i++)
             {
@@ -481,17 +508,11 @@ public class CellController : MonoBehaviour
                 //If Cell Open And Have a Hexagon
                 if (ControlNeighbourGrid.isOpen && ControlNeighbourGrid.CellContentList.Count > 0)
                 {
-                    //foreach (var neighbourCell in ControlNeighbourGridPart.hexagons)
-                    //{
-                    //    //if(MyTopRopeColor)
-                    //}
                     //If Hexagon Colors Matched
                     if (MyTopRopeColor == ControlNeighbourGridPart.hexagons[ControlNeighbourGridPart.hexagons.Count - 1].GetTexture())
                     {
-                        //SelectedNeighbours.Add(new Vector2(NeighbourPosX, NeighbourPosY));
                         canBlast = false;
                         return false;
-                        //StartCoroutine(ControlTransfer(0));
                     }
                 }
             }
